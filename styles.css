@@ -1,5 +1,5 @@
-/* ===================================================
-   SEMPER FIT GYMNASIUM — STYLESHEET
+ï»¿/* ===================================================
+   SEMPER FIT GYMNASIUM â€” STYLESHEET
    Brand: Black #0A0A0A | Crimson #c49a0a | Amber #8d0422
 =================================================== */
 
@@ -919,7 +919,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--border); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; max-width: 1300px; margin: 0 auto 60px; }
 .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.footer-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 6px; }
+.footer-logo img { height: 75px; width: 75px; object-fit: contain; border-radius: 6px; }
 .footer-logo span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px; }
 .footer-logo span em { color: var(--amber); font-style: normal; }
 
@@ -1223,7 +1223,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
   .bmi-text { text-align: left !important; }
   .reveal-right { transform: translateY(20px) !important; }
 }
-/* Brand maroon glow — makes #8d0422 readable on dark backgrounds */
+/* Brand maroon glow â€” makes #8d0422 readable on dark backgrounds */
 h1 span, h2 span, .section-title span {
   text-shadow: 0 0 18px rgba(180,10,40,0.75), 0 2px 8px rgba(141,4,34,0.5);
 }
