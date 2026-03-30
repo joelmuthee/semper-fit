@@ -648,7 +648,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .level-intermediate { background: rgba(245,166,35,0.9); color: var(--white); }
 .level-advanced { background: rgba(10,10,10,0.85); color: var(--amber); border: 1px solid var(--amber); }
 .class-card-img { position: relative; }
-.class-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.class-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; overflow: hidden; align-items: center; justify-content: center; margin-bottom: 14px; }
 .class-icon svg { width: 22px; height: 22px; stroke: var(--amber); fill: none; }
 .class-details { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); text-align: left; }
 .class-details li { display: flex; align-items: center; gap: 10px; font-size: 0.78rem; color: var(--gray); }
@@ -789,7 +789,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .membership-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
 .membership-featured { border-color: var(--amber); background: linear-gradient(135deg, rgba(245,166,35,0.25), var(--card)); }
 .membership-badge { display: inline-block; background: var(--amber); color: var(--black); font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; margin-bottom: 24px; }
-.membership-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.membership-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; overflow: hidden; align-items: center; justify-content: center; margin-bottom: 22px; }
 .membership-icon svg { width: 26px; height: 26px; stroke: var(--amber); }
 .membership-card h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; color: var(--white); }
 .membership-price { font-size: 2.2rem; font-weight: 800; color: var(--white); font-family: 'Montserrat', sans-serif; margin-bottom: 6px; line-height: 1; }
@@ -872,7 +872,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .contact-cards { display: flex; flex-direction: column; gap: 14px; }
 .contact-card { display: flex; align-items: flex-start; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; transition: border-color 0.3s; }
 .contact-card:hover { border-color: rgba(141,4,34,0.3); }
-.contact-card-icon { width: 42px; height: 42px; flex-shrink: 0; background: rgba(245,166,35,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.contact-card-icon { width: 42px; height: 42px; flex-shrink: 0; background: rgba(245,166,35,0.2); border-radius: 10px; display: flex; overflow: hidden; align-items: center; justify-content: center; }
 .contact-card-icon svg { width: 18px; height: 18px; stroke: var(--amber); fill: none; }
 .contact-card-text { min-width: 0; flex: 1; }
 .contact-card-text h4 { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
