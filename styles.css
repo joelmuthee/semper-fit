@@ -1192,3 +1192,17 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .bmi-msg { font-size: 0.87rem; color: var(--gray); line-height: 1.75; margin-bottom: 18px; padding: 14px 16px; background: rgba(255,255,255,0.03); border-left: 3px solid var(--amber); border-radius: 0 8px 8px 0; }
 .bmi-cta-link { display: block; text-align: center; color: var(--amber); font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px; border: 1px solid rgba(141,4,34,0.3); border-radius: 8px; transition: background 0.2s, border-color 0.2s; }
 .bmi-cta-link:hover { background: rgba(141,4,34,0.08); border-color: var(--amber); }
+
+/* ===== WHATSAPP WIDGET ===== */
+.whatsapp-widget {
+  position: fixed; bottom: 24px; right: 24px; z-index: 1001;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-widget:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+}
