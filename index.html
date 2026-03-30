@@ -36,7 +36,64 @@
   "areaServed": {"@type": "City", "name": "Nairobi"},
   "image": "images/gym/gym_3.webp"
 }
-</script>
+
+// -- BMI Calculator ------------------------------------------
+(function() {
+  var unit = 'metric';
+  document.getElementById('btnMetric').addEventListener('click', function() {
+    unit = 'metric';
+    document.getElementById('btnMetric').classList.add('active');
+    document.getElementById('btnImperial').classList.remove('active');
+    document.getElementById('metricFields').style.display = '';
+    document.getElementById('imperialFields').style.display = 'none';
+  });
+  document.getElementById('btnImperial').addEventListener('click', function() {
+    unit = 'imperial';
+    document.getElementById('btnImperial').classList.add('active');
+    document.getElementById('btnMetric').classList.remove('active');
+    document.getElementById('imperialFields').style.display = '';
+    document.getElementById('metricFields').style.display = 'none';
+  });
+  document.getElementById('calcBmiBtn').addEventListener('click', function() {
+    var bmi;
+    if (unit === 'metric') {
+      var h = parseFloat(document.getElementById('heightCm').value) / 100;
+      var w = parseFloat(document.getElementById('weightKg').value);
+      if (!h || !w || h < 0.5) return;
+      bmi = w / (h * h);
+    } else {
+      var ft = parseFloat(document.getElementById('heightFt').value) || 0;
+      var ins = parseFloat(document.getElementById('heightIn').value) || 0;
+      var lbs = parseFloat(document.getElementById('weightLbs').value);
+      var totalIn = ft * 12 + ins;
+      if (!totalIn || !lbs) return;
+      bmi = (lbs / (totalIn * totalIn)) * 703;
+    }
+    bmi = Math.round(bmi * 10) / 10;
+    var clamped = Math.max(15, Math.min(40, bmi));
+    document.getElementById('bmiResult').style.display = 'block';
+    document.getElementById('bmiNeedle').style.transform = 'rotate(' + ((clamped - 27.5) * 7.2) + 'deg)';
+    document.getElementById('bmiNum').textContent = bmi;
+    var cat, msg, color;
+    if (bmi < 18.5) {
+      cat = 'Underweight'; color = '#6495ED';
+      msg = 'Building lean muscle could help you reach a healthier range. Our trainers can design a safe, structured programme to help you gain strength.';
+    } else if (bmi < 25) {
+      cat = 'Healthy Weight'; color = '#22c55e';
+      msg = "You're in a great range. Keep the momentum going — our gym will help you maintain it and push your performance even further.";
+    } else if (bmi < 30) {
+      cat = 'Overweight'; color = '#F5A623';
+      msg = 'A few consistent changes make a big difference. Let our expert coaches craft a plan tailored to your lifestyle and goals.';
+    } else {
+      cat = 'Obese'; color = '#8d0422';
+      msg = 'The best time to start is today. Our trainers specialise in building progressive programmes that meet you exactly where you are.';
+    }
+    var catEl = document.getElementById('bmiCat');
+    catEl.textContent = cat; catEl.style.color = color;
+    document.getElementById('bmiMsg').textContent = msg;
+    document.getElementById('bmiResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="image" href="images/gym/hero.webp">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -65,13 +122,29 @@
   <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" id="mobileClose">&times;</button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="classes.html">Classes</a>
-  <a href="padel.html">Padel</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="gallery.html#contact">Contact</a>
+  <div class="mobile-nav-header">
+    <div class="mobile-nav-logo">
+      <img src="images/logo.jpg" alt="Semper Fit">
+      <span>SEMPER <em>FIT</em></span>
+    </div>
+    <button class="mobile-nav-close" id="mobileClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mn-item mn-d1">Home</a>
+    <a href="about.html" class="mn-item mn-d2">About</a>
+    <a href="classes.html" class="mn-item mn-d3">Classes</a>
+    <a href="padel.html" class="mn-item mn-d4">Padel</a>
+    <a href="gallery.html" class="mn-item mn-d5">Gallery</a>
+    <a href="gallery.html#contact" class="mn-item mn-d6">Contact</a>
+  </nav>
+  <div class="mobile-nav-footer">
+    <a href="gallery.html#contact" class="mobile-nav-cta">Join Now</a>
+    <a href="https://www.instagram.com/semper_fit_gymnasium/" target="_blank" class="mobile-nav-social" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -83,7 +156,7 @@
   <div class="hero-content" style="text-align:center; margin-left:auto; margin-right:auto;">
     <div class="hero-badge">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      Premium Gym &amp; Padel, SCIS, Nairobi
+      Premium Gym &amp; Padel At SCIS
     </div>
     <h1>Train Hard.<br><span>Live Strong.</span></h1>
     <p>Nairobi's premier fitness destination. State-of-the-art gym equipment, expert coaches, and professional padel courts, all under one roof.</p>
@@ -101,18 +174,30 @@
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-item">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
     <div class="stat-number" data-target="500" data-suffix="+">0</div>
     <div class="stat-label">Active Members</div>
   </div>
   <div class="stat-item">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    </div>
     <div class="stat-number" data-target="15" data-suffix="+">0</div>
     <div class="stat-label">Expert Trainers</div>
   </div>
   <div class="stat-item">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </div>
     <div class="stat-number" data-target="2" data-suffix="">0</div>
     <div class="stat-label">Padel Courts</div>
   </div>
   <div class="stat-item">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
     <div class="stat-number" data-target="7" data-suffix="">0</div>
     <div class="stat-label">Days a Week</div>
   </div>
@@ -121,7 +206,7 @@
 <!-- ABOUT SNIPPET -->
 <section class="about-snippet">
   <div class="about-img reveal-left">
-    <img src="images/gym/gym_5.webp" alt="Semper Fit Gym Floor">
+    <img src="images/gym/community.webp" alt="Semper Fit Community">
     <div class="about-img-badge">
       <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       <div>
@@ -261,6 +346,173 @@
   </div>
 </section>
 
+<!-- BMI CALCULATOR -->
+<section class="bmi-section">
+  <div class="bmi-inner">
+    <div class="bmi-text reveal-left">
+      <div class="section-label">Know Your Numbers</div>
+      <h2 class="section-title">Find Your <span>Starting Point</span></h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle" style="margin-bottom: 24px;">Your BMI gives you a snapshot of where you stand today. Our trainers take that number and build something better.</p>
+      <div class="bmi-facts">
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Used by health professionals worldwide</span></div>
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>A starting point, not a final verdict</span></div>
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Our coaches build personalised plans from here</span></div>
+      </div>
+    </div>
+    <div class="bmi-card reveal-right">
+      <div class="bmi-unit-toggle">
+        <button class="bmi-unit-btn active" id="btnMetric">Metric</button>
+        <button class="bmi-unit-btn" id="btnImperial">Imperial</button>
+      </div>
+      <div id="metricFields" class="bmi-fields">
+        <div class="bmi-field-row">
+          <div class="bmi-field-group">
+            <label>Height</label>
+            <div class="bmi-input-wrap"><input type="number" id="heightCm" placeholder="170" min="100" max="250"><span class="bmi-tag">cm</span></div>
+          </div>
+          <div class="bmi-field-group">
+            <label>Weight</label>
+            <div class="bmi-input-wrap"><input type="number" id="weightKg" placeholder="70" min="20" max="300"><span class="bmi-tag">kg</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="imperialFields" class="bmi-fields" style="display:none;">
+        <div class="bmi-field-row">
+          <div class="bmi-field-group">
+            <label>Height</label>
+            <div class="bmi-input-wrap" style="gap:6px;">
+              <input type="number" id="heightFt" placeholder="5" min="3" max="8" style="width:60px;"><span class="bmi-tag">ft</span>
+              <input type="number" id="heightIn" placeholder="10" min="0" max="11" style="width:60px; margin-left:6px;"><span class="bmi-tag">in</span>
+            </div>
+          </div>
+          <div class="bmi-field-group">
+            <label>Weight</label>
+            <div class="bmi-input-wrap"><input type="number" id="weightLbs" placeholder="154" min="44" max="660"><span class="bmi-tag">lbs</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="bmi-calc-btn" id="calcBmiBtn">Calculate BMI</button>
+      <div class="bmi-result" id="bmiResult" style="display:none;">
+        <div class="bmi-gauge-wrap">
+          <svg class="bmi-gauge-svg" viewBox="0 0 200 112" aria-hidden="true">
+            <!-- Track -->
+            <path d="M 25 100 A 75 75 0 1 0 175 100" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="13" stroke-linecap="butt"/>
+            <!-- Zone segments: CCW (sweep=0), BMI ranges mapped to arcs -->
+            <!-- Underweight: 15-18.5 (25.2deg) -->
+            <path d="M 25 100 A 75 75 0 0 0 32.2 68.1" fill="none" stroke="#6495ED" stroke-width="13" stroke-linecap="butt"/>
+            <!-- Healthy: 18.5-25 (46.8deg) -->
+            <path d="M 32.2 68.1 A 75 75 0 0 0 76.8 28.7" fill="none" stroke="#22c55e" stroke-width="13" stroke-linecap="butt"/>
+            <!-- Overweight: 25-30 (36deg) -->
+            <path d="M 76.8 28.7 A 75 75 0 0 0 123.2 28.7" fill="none" stroke="#F5A623" stroke-width="13" stroke-linecap="butt"/>
+            <!-- Obese: 30-40 (72deg) -->
+            <path d="M 123.2 28.7 A 75 75 0 0 0 175 100" fill="none" stroke="#8d0422" stroke-width="13" stroke-linecap="butt"/>
+            <!-- Needle group — rotates around center (100,100) -->
+            <g id="bmiNeedle" style="transform-origin:100px 100px; transform:rotate(-90deg); transition:transform 0.9s cubic-bezier(0.34,1.56,0.64,1);">
+              <line x1="100" y1="100" x2="100" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="100" cy="30" r="3.5" fill="white"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="white"/>
+            <circle cx="100" cy="100" r="3" fill="#111"/>
+          </svg>
+          <div class="bmi-score">
+            <span class="bmi-num" id="bmiNum">--</span>
+            <span class="bmi-cat" id="bmiCat"></span>
+          </div>
+        </div>
+        <div class="bmi-legend">
+          <div class="bl-item"><span class="bl-dot" style="background:#6495ED;"></span>Under 18.5 — Underweight</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#22c55e;"></span>18.5 to 24.9 — Healthy</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#F5A623;"></span>25 to 29.9 — Overweight</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#8d0422;"></span>30 and above — Obese</div>
+        </div>
+        <p class="bmi-msg" id="bmiMsg"></p>
+        <a href="gallery.html#contact" class="bmi-cta-link">Start your transformation at Semper Fit &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BMI CALCULATOR -->
+<section class="bmi-section">
+  <div class="bmi-inner">
+    <div class="bmi-text reveal-left">
+      <div class="section-label">Know Your Numbers</div>
+      <h2 class="section-title">Find Your <span>Starting Point</span></h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle" style="margin-bottom: 24px;">Your BMI gives you a snapshot of where you stand today. Our trainers take that number and build something better.</p>
+      <div class="bmi-facts">
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Used by health professionals worldwide</span></div>
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>A starting point, not a final verdict</span></div>
+        <div class="bmi-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Our coaches build personalised plans from here</span></div>
+      </div>
+    </div>
+    <div class="bmi-card reveal-right">
+      <div class="bmi-unit-toggle">
+        <button class="bmi-unit-btn active" id="btnMetric">Metric</button>
+        <button class="bmi-unit-btn" id="btnImperial">Imperial</button>
+      </div>
+      <div id="metricFields" class="bmi-fields">
+        <div class="bmi-field-row">
+          <div class="bmi-field-group">
+            <label>Height</label>
+            <div class="bmi-input-wrap"><input type="number" id="heightCm" placeholder="170" min="100" max="250"><span class="bmi-tag">cm</span></div>
+          </div>
+          <div class="bmi-field-group">
+            <label>Weight</label>
+            <div class="bmi-input-wrap"><input type="number" id="weightKg" placeholder="70" min="20" max="300"><span class="bmi-tag">kg</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="imperialFields" class="bmi-fields" style="display:none;">
+        <div class="bmi-field-row">
+          <div class="bmi-field-group">
+            <label>Height</label>
+            <div class="bmi-input-wrap" style="gap:6px;">
+              <input type="number" id="heightFt" placeholder="5" min="3" max="8" style="width:60px;"><span class="bmi-tag">ft</span>
+              <input type="number" id="heightIn" placeholder="10" min="0" max="11" style="width:60px; margin-left:6px;"><span class="bmi-tag">in</span>
+            </div>
+          </div>
+          <div class="bmi-field-group">
+            <label>Weight</label>
+            <div class="bmi-input-wrap"><input type="number" id="weightLbs" placeholder="154" min="44" max="660"><span class="bmi-tag">lbs</span></div>
+          </div>
+        </div>
+      </div>
+      <button class="bmi-calc-btn" id="calcBmiBtn">Calculate BMI</button>
+      <div class="bmi-result" id="bmiResult" style="display:none;">
+        <div class="bmi-gauge-wrap">
+          <svg class="bmi-gauge-svg" viewBox="0 0 200 112" aria-hidden="true">
+            <path d="M 25 100 A 75 75 0 1 0 175 100" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="13" stroke-linecap="butt"/>
+            <path d="M 25 100 A 75 75 0 0 0 32.2 68.1" fill="none" stroke="#6495ED" stroke-width="13" stroke-linecap="butt"/>
+            <path d="M 32.2 68.1 A 75 75 0 0 0 76.8 28.7" fill="none" stroke="#22c55e" stroke-width="13" stroke-linecap="butt"/>
+            <path d="M 76.8 28.7 A 75 75 0 0 0 123.2 28.7" fill="none" stroke="#F5A623" stroke-width="13" stroke-linecap="butt"/>
+            <path d="M 123.2 28.7 A 75 75 0 0 0 175 100" fill="none" stroke="#8d0422" stroke-width="13" stroke-linecap="butt"/>
+            <g id="bmiNeedle" style="transform-origin:100px 100px; transform:rotate(-90deg); transition:transform 0.9s cubic-bezier(0.34,1.56,0.64,1);">
+              <line x1="100" y1="100" x2="100" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="100" cy="30" r="3.5" fill="white"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="white"/>
+            <circle cx="100" cy="100" r="3" fill="#111"/>
+          </svg>
+          <div class="bmi-score">
+            <span class="bmi-num" id="bmiNum">--</span>
+            <span class="bmi-cat" id="bmiCat"></span>
+          </div>
+        </div>
+        <div class="bmi-legend">
+          <div class="bl-item"><span class="bl-dot" style="background:#6495ED;"></span>Under 18.5 &mdash; Underweight</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#22c55e;"></span>18.5 to 24.9 &mdash; Healthy</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#F5A623;"></span>25 to 29.9 &mdash; Overweight</div>
+          <div class="bl-item"><span class="bl-dot" style="background:#8d0422;"></span>30 and above &mdash; Obese</div>
+        </div>
+        <p class="bmi-msg" id="bmiMsg"></p>
+        <a href="gallery.html#contact" class="bmi-cta-link">Start your transformation at Semper Fit &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY PREVIEW -->
 <section class="gallery-preview">
   <div class="section-header reveal">
@@ -335,8 +587,8 @@
         <li><a href="tel:+254720720444" style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.35);text-underline-offset:3px;">0720 720 444</a></li>
         <li><a href="tel:+254742822357" style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.35);text-underline-offset:3px;">0742 822 357</a></li>
         <li><a href="mailto:semperfitgymnasium@scsinternational.sc.ke" style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.35);text-underline-offset:3px;">semperfitgymnasium@scsinternational.sc.ke</a></li>
-        <li><a href="#">Monâ€“Fri: 5â€“8am &amp; 4â€“8pm</a></li>
-        <li><a href="#">Sat: 6amâ€“6pm | Sun: 10amâ€“2pm</a></li>
+        <li><a href="#">Mon–Fri: 5–8am &amp; 4–8pm</a></li>
+        <li><a href="#">Sat: 6am–6pm | Sun: 10am–2pm</a></li>
       </ul>
     </div>
   </div>
@@ -408,7 +660,146 @@ Object.assign(btt.style, { position:'fixed',bottom:'30px',left:'30px',width:'46p
 document.body.appendChild(btt);
 window.addEventListener('scroll', () => { const s = window.scrollY > 400; btt.style.opacity = s?'1':'0'; btt.style.pointerEvents = s?'auto':'none'; });
 btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
+
+// -- BMI Calculator ------------------------------------------
+(function() {
+  let unit = 'metric';
+  const btnMetric   = document.getElementById('btnMetric');
+  const btnImperial = document.getElementById('btnImperial');
+  const metricFields   = document.getElementById('metricFields');
+  const imperialFields = document.getElementById('imperialFields');
+  const resultEl = document.getElementById('bmiResult');
+  const needle   = document.getElementById('bmiNeedle');
+
+  btnMetric.addEventListener('click', () => {
+    unit = 'metric';
+    btnMetric.classList.add('active'); btnImperial.classList.remove('active');
+    metricFields.style.display = ''; imperialFields.style.display = 'none';
+  });
+  btnImperial.addEventListener('click', () => {
+    unit = 'imperial';
+    btnImperial.classList.add('active'); btnMetric.classList.remove('active');
+    imperialFields.style.display = ''; metricFields.style.display = 'none';
+  });
+
+  document.getElementById('calcBmiBtn').addEventListener('click', calcBmi);
+
+  function calcBmi() {
+    let bmi;
+    if (unit === 'metric') {
+      const h = parseFloat(document.getElementById('heightCm').value) / 100;
+      const w = parseFloat(document.getElementById('weightKg').value);
+      if (!h || !w || h < 0.5 || h > 3) return shake();
+      bmi = w / (h * h);
+    } else {
+      const ft  = parseFloat(document.getElementById('heightFt').value) || 0;
+      const ins = parseFloat(document.getElementById('heightIn').value) || 0;
+      const lbs = parseFloat(document.getElementById('weightLbs').value);
+      const totalIn = ft * 12 + ins;
+      if (!totalIn || !lbs) return shake();
+      bmi = (lbs / (totalIn * totalIn)) * 703;
+    }
+
+    bmi = Math.round(bmi * 10) / 10;
+    const clamped = Math.max(15, Math.min(40, bmi));
+
+    // Show result panel
+    resultEl.style.display = 'block';
+
+    // Needle: maps BMI 15?-90°, 27.5?0°, 40?+90°
+    const deg = (clamped - 27.5) * 7.2;
+    needle.style.transform = 'rotate(' + deg + 'deg)';
+
+    // Number + category
+    document.getElementById('bmiNum').textContent = bmi;
+    let cat, msg, color;
+    if (bmi < 18.5) {
+      cat = 'Underweight'; color = '#6495ED';
+      msg = 'Building lean muscle could help you reach a healthier range. Our trainers can design a safe, structured programme to help you gain strength.';
+    } else if (bmi < 25) {
+      cat = 'Healthy Weight'; color = '#22c55e';
+      msg = "You're in a great range. Keep the momentum going — our gym will help you maintain it and push your performance even further.";
+    } else if (bmi < 30) {
+      cat = 'Overweight'; color = '#F5A623';
+      msg = 'A few consistent changes make a big difference. Let our expert coaches craft a plan tailored to your lifestyle and goals.';
+    } else {
+      cat = 'Obese'; color = '#8d0422';
+      msg = 'The best time to start is today. Our trainers specialise in building progressive programmes that meet you exactly where you are.';
+    }
+    const catEl = document.getElementById('bmiCat');
+    catEl.textContent = cat; catEl.style.color = color;
+    document.getElementById('bmiMsg').textContent = msg;
+
+    // Scroll result into view smoothly
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function shake() {
+    const btn = document.getElementById('calcBmiBtn');
+    btn.style.animation = 'none';
+    btn.style.transform = 'translateX(-6px)';
+    setTimeout(() => { btn.style.transform = 'translateX(6px)'; }, 80);
+    setTimeout(() => { btn.style.transform = 'translateX(0)'; }, 160);
+  }
+})();
+
+// -- BMI Calculator ------------------------------------------
+(function() {
+  var unit = 'metric';
+  document.getElementById('btnMetric').addEventListener('click', function() {
+    unit = 'metric';
+    document.getElementById('btnMetric').classList.add('active');
+    document.getElementById('btnImperial').classList.remove('active');
+    document.getElementById('metricFields').style.display = '';
+    document.getElementById('imperialFields').style.display = 'none';
+  });
+  document.getElementById('btnImperial').addEventListener('click', function() {
+    unit = 'imperial';
+    document.getElementById('btnImperial').classList.add('active');
+    document.getElementById('btnMetric').classList.remove('active');
+    document.getElementById('imperialFields').style.display = '';
+    document.getElementById('metricFields').style.display = 'none';
+  });
+  document.getElementById('calcBmiBtn').addEventListener('click', function() {
+    var bmi;
+    if (unit === 'metric') {
+      var h = parseFloat(document.getElementById('heightCm').value) / 100;
+      var w = parseFloat(document.getElementById('weightKg').value);
+      if (!h || !w || h < 0.5) return;
+      bmi = w / (h * h);
+    } else {
+      var ft = parseFloat(document.getElementById('heightFt').value) || 0;
+      var ins = parseFloat(document.getElementById('heightIn').value) || 0;
+      var lbs = parseFloat(document.getElementById('weightLbs').value);
+      var totalIn = ft * 12 + ins;
+      if (!totalIn || !lbs) return;
+      bmi = (lbs / (totalIn * totalIn)) * 703;
+    }
+    bmi = Math.round(bmi * 10) / 10;
+    var clamped = Math.max(15, Math.min(40, bmi));
+    document.getElementById('bmiResult').style.display = 'block';
+    document.getElementById('bmiNeedle').style.transform = 'rotate(' + ((clamped - 27.5) * 7.2) + 'deg)';
+    document.getElementById('bmiNum').textContent = bmi;
+    var cat, msg, color;
+    if (bmi < 18.5) {
+      cat = 'Underweight'; color = '#6495ED';
+      msg = 'Building lean muscle could help you reach a healthier range. Our trainers can design a safe, structured programme to help you gain strength.';
+    } else if (bmi < 25) {
+      cat = 'Healthy Weight'; color = '#22c55e';
+      msg = "You're in a great range. Keep the momentum going — our gym will help you maintain it and push your performance even further.";
+    } else if (bmi < 30) {
+      cat = 'Overweight'; color = '#F5A623';
+      msg = 'A few consistent changes make a big difference. Let our expert coaches craft a plan tailored to your lifestyle and goals.';
+    } else {
+      cat = 'Obese'; color = '#8d0422';
+      msg = 'The best time to start is today. Our trainers specialise in building progressive programmes that meet you exactly where you are.';
+    }
+    var catEl = document.getElementById('bmiCat');
+    catEl.textContent = cat; catEl.style.color = color;
+    document.getElementById('bmiMsg').textContent = msg;
+    document.getElementById('bmiResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();</script>
 
 </body>
 </html>
