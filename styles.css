@@ -1227,3 +1227,8 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 h1 span, h2 span, .section-title span {
   text-shadow: 0 0 18px rgba(180,10,40,0.75), 0 2px 8px rgba(141,4,34,0.5);
 }
+/* Service cards center alignment on mobile */
+@media (max-width: 768px) {
+  .service-card { text-align: center; }
+  .service-icon { margin: 0 auto 18px; }
+}
