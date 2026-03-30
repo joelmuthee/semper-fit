@@ -1207,3 +1207,19 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
   transition: background 0.2s, border-color 0.2s;
 }
 .bmi-cta-link:hover { background: rgba(141,4,34,0.08); border-color: var(--amber); }
+/* ===== BMI MOBILE FIX (must stay at end of file) ===== */
+@media (max-width: 768px) {
+  .bmi-section { padding: 60px 20px !important; }
+  .bmi-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    max-width: 100% !important;
+  }
+  .bmi-card {
+    padding: 24px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .bmi-text { text-align: left !important; }
+  .reveal-right { transform: translateY(20px) !important; }
+}
