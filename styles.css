@@ -237,38 +237,47 @@ h1, h2, h3, h4 {
 
 /* ===== STATS BAR ===== */
 .stats-bar {
-  background: linear-gradient(135deg, #0e0e0e 0%, #110005 50%, #0e0e0e 100%);
-  border-top: 1px solid rgba(141,4,34,0.2);
-  border-bottom: 1px solid rgba(141,4,34,0.2);
+  background: linear-gradient(135deg, #06101f 0%, #0c1a3a 50%, #06101f 100%);
+  border-top: 3px solid var(--amber);
+  border-bottom: 3px solid var(--amber);
   display: grid; grid-template-columns: repeat(4, 1fr);
   padding: 52px 60px;
   position: relative;
+  overflow: hidden;
 }
 .stats-bar::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(245,166,35,0.12) 50%, transparent 100%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(245,166,35,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 .stat-item {
   text-align: center; padding: 0 24px;
-  border-right: 1px solid rgba(141,4,34,0.15);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  border-right: 1px solid rgba(245,166,35,0.15);
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
   position: relative;
+  transition: transform 0.25s ease;
 }
+.stat-item:hover { transform: translateY(-4px); }
 .stat-item:last-child { border-right: none; }
 .stat-icon {
-  width: 40px; height: 40px;
+  width: 64px; height: 64px;
   border-radius: 50%;
-  background: rgba(141,4,34,0.1);
-  border: 1px solid rgba(141,4,34,0.25);
+  background: rgba(245,166,35,0.08);
+  border: 2px solid rgba(245,166,35,0.4);
   overflow: hidden; display: flex; align-items: center; justify-content: center;
   color: var(--amber);
   margin-bottom: 4px;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
-.stat-icon svg { width: 18px; height: 18px; display: block; flex-shrink: 0; }
+.stat-item:hover .stat-icon {
+  background: rgba(245,166,35,0.18);
+  border-color: var(--amber);
+  box-shadow: 0 0 20px rgba(245,166,35,0.25);
+}
+.stat-icon svg { width: 26px; height: 26px; display: block; flex-shrink: 0; }
 .stat-number { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--white); line-height: 1; font-variant-numeric: tabular-nums; display: inline-block; text-align: center; }
-.stat-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; }
+.stat-label { font-size: 0.9rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.9); font-weight: 700; }
 
 /* ===== ABOUT SNIPPET ===== */
 .about-snippet {
@@ -1232,4 +1241,6 @@ h1 span, h2 span, .section-title span {
   .service-card { text-align: center; }
   .service-icon { margin: 0 auto 18px; }
 }
+
+
 
