@@ -1036,6 +1036,9 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
   }
   .contact-info { overflow: hidden; }
   .map-inner .section-header { text-align: center; }
+  /* Reveal: fade-up only on mobile (no horizontal shift = no overflow) */
+  .reveal-left { transform: translateY(30px); }
+  .reveal-right { transform: translateY(30px); }
   /* BMI mobile */
   .bmi-section { padding: 60px 20px; }
   .bmi-inner { grid-template-columns: 1fr; gap: 36px; }
