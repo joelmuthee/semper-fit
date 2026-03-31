@@ -188,50 +188,24 @@
     </div>
 
     <div class="contact-form-wrap reveal-right">
-      <!-- FORMSPREE: Register at formspree.io with semperfitgymnasium@scsinternational.sc.ke to get your form ID, then replace YOUR_FORM_ID below -->
-      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <h3>Send Us a Message</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000">
-        </div>
-        <div class="form-group">
-          <label for="interest">I'm interested in</label>
-          <select id="interest" name="interest">
-            <option value="">Select an option</option>
-            <option value="membership">Gym Membership</option>
-            <option value="padel-booking">Padel Court Booking</option>
-            <option value="padel-coaching">Padel Coaching</option>
-            <option value="personal-training">Personal Training</option>
-            <option value="group-classes">Group Classes</option>
-            <option value="corporate">Corporate / Event Booking</option>
-            <option value="general">General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your fitness goals or what you'd like to book..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message</button>
-        <div class="form-success" id="formSuccess">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Thank you! We'll be in touch within 24 hours.
-        </div>
-      </form>
+      <iframe
+        src="https://link.essenceautomations.com/widget/form/atcWmCTVuqq7S7bspovk"
+        style="width:100%;height:732px;border:none;border-radius:15px"
+        id="inline-atcWmCTVuqq7S7bspovk"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Semper Fit Contact Form"
+        data-height="732"
+        data-layout-iframe-id="inline-atcWmCTVuqq7S7bspovk"
+        data-form-id="atcWmCTVuqq7S7bspovk"
+        title="Semper Fit Contact Form">
+      </iframe>
+      <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
     </div>
   </div>
 </section>
@@ -328,49 +302,6 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => revealObs.observe(el));
 
-// Form submission
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const btn = form.querySelector('.form-submit');
-  const success = document.getElementById('formSuccess');
-  const action = form.getAttribute('action');
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  if (action && action.includes('formspree.io') && !action.includes('YOUR_FORM_ID')) {
-    const data = new FormData(form);
-    try {
-      const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-      if (res.ok) {
-        form.style.opacity = '0.5';
-        form.style.pointerEvents = 'none';
-        success.style.display = 'flex';
-      } else {
-        btn.textContent = 'Try Again';
-        btn.disabled = false;
-        alert('Submission failed. Please email us at semperfitgymnasium@scsinternational.sc.ke');
-      }
-    } catch (err) {
-      btn.textContent = 'Try Again';
-      btn.disabled = false;
-      alert('Network error. Please email us at semperfitgymnasium@scsinternational.sc.ke');
-    }
-  } else {
-    const firstName = form.querySelector('#firstName').value;
-    const lastName = form.querySelector('#lastName').value;
-    const email = form.querySelector('#email').value;
-    const phone = form.querySelector('#phone').value;
-    const interest = form.querySelector('#interest').value;
-    const message = form.querySelector('#message').value;
-    const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${interest}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:semperfitgymnasium@scsinternational.sc.ke?subject=Enquiry from ${firstName} ${lastName}&body=${body}`;
-    form.style.opacity = '0.5';
-    form.style.pointerEvents = 'none';
-    success.style.display = 'flex';
-  }
-}
 
 // Back to top
 const btt = document.createElement('button');
