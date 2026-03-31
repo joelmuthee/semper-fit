@@ -383,7 +383,7 @@ h1, h2, h3, h4 {
 footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--border); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
 .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.footer-brand-logo img { height: 44px; width: 44px; object-fit: contain; border-radius: 6px; }
+.footer-brand-logo img { height: 90px; width: 90px; object-fit: contain; border-radius: 6px; }
 .footer-brand-logo span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px; }
 .footer-brand-logo span em { color: var(--amber); font-style: normal; }
 .footer-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.8; margin-bottom: 24px; }
