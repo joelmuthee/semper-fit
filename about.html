@@ -101,9 +101,6 @@
       <div class="story-img-main">
         <img src="images/gym/gym_6.webp" alt="Gym training floor" loading="lazy">
       </div>
-      <div class="story-img-secondary">
-        <img src="images/gym/gym_9.webp" alt="" loading="lazy">
-      </div>
     </div>
   </div>
 </section>
@@ -361,11 +358,4 @@ document.querySelectorAll('img[loading="lazy"]').forEach(img => {
 // Back to top
 const btt = document.createElement('button');
 btt.innerHTML = '&#8593;'; btt.setAttribute('aria-label', 'Back to top');
-Object.assign(btt.style, { position:'fixed',bottom:'30px',left:'30px',width:'46px',height:'46px',borderRadius:'50%',background:'var(--amber)',color:'var(--black)',border:'none',fontSize:'1.3rem',cursor:'pointer',opacity:'0',transition:'all 0.3s',zIndex:'999',fontWeight:'700',pointerEvents:'none' });
-document.body.appendChild(btt);
-window.addEventListener('scroll', () => { const s = window.scrollY > 400; btt.style.opacity = s?'1':'0'; btt.style.pointerEvents = s?'auto':'none'; });
-btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
-
-</body>
-</html>
+Object.assign(btt.style, { position:'fixed',bottom:'30px',left:'30px',width:'46px',height:'46px',borderRadius:'50%',background:'var(--amber)',color:'var(--black)',border:'none',fontSize:'1.3rem',cursor:'pointer',opacity:'0',transition:
