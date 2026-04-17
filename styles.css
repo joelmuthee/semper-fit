@@ -1242,7 +1242,9 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .theme-toggle:hover { background: rgba(245,166,35,0.9); color: var(--black); }
 [data-theme="light"] .mobile-theme-toggle .icon-sun { display: block; }
 [data-theme="light"] .mobile-theme-toggle .icon-moon { display: none; }
-[data-theme="light"] .mobile-theme-toggle { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color: #1A1A1A; }
+/* Mobile nav always dark bg — keep icons white regardless of theme */
+[data-theme="light"] .mobile-nav-close { color: #FFFFFF; border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); }
+[data-theme="light"] .mobile-theme-toggle { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #FFFFFF; }
 
 /* Navbar */
 [data-theme="light"] .navbar.scrolled {
