@@ -1484,6 +1484,9 @@ h1 span, h2 span, .section-title span {
 /* Padel teaser border */
 [data-theme="light"] .padel-teaser-inner { border-color: rgba(245,166,35,0.25); background: #FFFFFF; }
 
+/* Padel reasons list text on light */
+[data-theme="light"] .padel-reasons li { color: #1A1A1A; }
+
 /* Gallery preview items on light */
 [data-theme="light"] .preview-item::after { background: linear-gradient(to top, rgba(245,166,35,0.5) 0%, transparent 60%); }
 
