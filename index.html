@@ -38,70 +38,14 @@
   "areaServed": {"@type": "City", "name": "Nairobi"},
   "image": "images/gym/gym_3.webp"
 }
-
-// -- BMI Calculator ------------------------------------------
-(function() {
-  var unit = 'metric';
-  document.getElementById('btnMetric').addEventListener('click', function() {
-    unit = 'metric';
-    document.getElementById('btnMetric').classList.add('active');
-    document.getElementById('btnImperial').classList.remove('active');
-    document.getElementById('metricFields').style.display = '';
-    document.getElementById('imperialFields').style.display = 'none';
-  });
-  document.getElementById('btnImperial').addEventListener('click', function() {
-    unit = 'imperial';
-    document.getElementById('btnImperial').classList.add('active');
-    document.getElementById('btnMetric').classList.remove('active');
-    document.getElementById('imperialFields').style.display = '';
-    document.getElementById('metricFields').style.display = 'none';
-  });
-  document.getElementById('calcBmiBtn').addEventListener('click', function() {
-    var bmi;
-    if (unit === 'metric') {
-      var h = parseFloat(document.getElementById('heightCm').value) / 100;
-      var w = parseFloat(document.getElementById('weightKg').value);
-      if (!h || !w || h < 0.5) return;
-      bmi = w / (h * h);
-    } else {
-      var ft = parseFloat(document.getElementById('heightFt').value) || 0;
-      var ins = parseFloat(document.getElementById('heightIn').value) || 0;
-      var lbs = parseFloat(document.getElementById('weightLbs').value);
-      var totalIn = ft * 12 + ins;
-      if (!totalIn || !lbs) return;
-      bmi = (lbs / (totalIn * totalIn)) * 703;
-    }
-    bmi = Math.round(bmi * 10) / 10;
-    var clamped = Math.max(15, Math.min(40, bmi));
-    document.getElementById('bmiResult').style.display = 'block';
-    document.getElementById('bmiNeedle').style.transform = 'rotate(' + ((clamped - 27.5) * 7.2) + 'deg)';
-    document.getElementById('bmiNum').textContent = bmi;
-    var cat, msg, color;
-    if (bmi < 18.5) {
-      cat = 'Underweight'; color = '#6495ED';
-      msg = 'Building lean muscle could help you reach a healthier range. Our trainers can design a safe, structured programme to help you gain strength.';
-    } else if (bmi < 25) {
-      cat = 'Healthy Weight'; color = '#22c55e';
-      msg = "You're in a great range. Keep the momentum going - our gym will help you maintain it and push your performance even further.";
-    } else if (bmi < 30) {
-      cat = 'Overweight'; color = '#F5A623';
-      msg = 'A few consistent changes make a big difference. Let our expert coaches craft a plan tailored to your lifestyle and goals.';
-    } else {
-      cat = 'Obese'; color = '#8d0422';
-      msg = 'The best time to start is today. Our trainers specialise in building progressive programmes that meet you exactly where you are.';
-    }
-    var catEl = document.getElementById('bmiCat');
-    catEl.textContent = cat; catEl.style.color = color;
-    document.getElementById('bmiMsg').textContent = msg;
-    document.getElementById('bmiResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-})();</script>
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="image" href="images/gym/hero.webp">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>var t=localStorage.getItem('sf-theme')||'light';document.documentElement.setAttribute('data-theme',t);</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -120,6 +64,10 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Join Now</a>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
   <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -144,6 +92,10 @@
     <a href="https://www.instagram.com/semper_fit_gymnasium/" target="_blank" class="mobile-nav-social" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
     </a>
+    <button class="mobile-theme-toggle" id="mobileThemeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
   </div>
 </div>
 
@@ -490,6 +442,24 @@
 </footer>
 
 <script>
+// Theme toggle
+(function(){
+  const saved = localStorage.getItem('sf-theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  function toggle() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('sf-theme', next);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var dt = document.getElementById('themeToggle');
+    var mt = document.getElementById('mobileThemeToggle');
+    if (dt) dt.addEventListener('click', toggle);
+    if (mt) mt.addEventListener('click', toggle);
+  });
+})();
+
 // Navbar scroll
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
@@ -634,62 +604,6 @@ btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth'
   }
 })();
 
-// -- BMI Calculator ------------------------------------------
-(function() {
-  var unit = 'metric';
-  document.getElementById('btnMetric').addEventListener('click', function() {
-    unit = 'metric';
-    document.getElementById('btnMetric').classList.add('active');
-    document.getElementById('btnImperial').classList.remove('active');
-    document.getElementById('metricFields').style.display = '';
-    document.getElementById('imperialFields').style.display = 'none';
-  });
-  document.getElementById('btnImperial').addEventListener('click', function() {
-    unit = 'imperial';
-    document.getElementById('btnImperial').classList.add('active');
-    document.getElementById('btnMetric').classList.remove('active');
-    document.getElementById('imperialFields').style.display = '';
-    document.getElementById('metricFields').style.display = 'none';
-  });
-  document.getElementById('calcBmiBtn').addEventListener('click', function() {
-    var bmi;
-    if (unit === 'metric') {
-      var h = parseFloat(document.getElementById('heightCm').value) / 100;
-      var w = parseFloat(document.getElementById('weightKg').value);
-      if (!h || !w || h < 0.5) return;
-      bmi = w / (h * h);
-    } else {
-      var ft = parseFloat(document.getElementById('heightFt').value) || 0;
-      var ins = parseFloat(document.getElementById('heightIn').value) || 0;
-      var lbs = parseFloat(document.getElementById('weightLbs').value);
-      var totalIn = ft * 12 + ins;
-      if (!totalIn || !lbs) return;
-      bmi = (lbs / (totalIn * totalIn)) * 703;
-    }
-    bmi = Math.round(bmi * 10) / 10;
-    var clamped = Math.max(15, Math.min(40, bmi));
-    document.getElementById('bmiResult').style.display = 'block';
-    document.getElementById('bmiNeedle').style.transform = 'rotate(' + ((clamped - 27.5) * 7.2) + 'deg)';
-    document.getElementById('bmiNum').textContent = bmi;
-    var cat, msg, color;
-    if (bmi < 18.5) {
-      cat = 'Underweight'; color = '#6495ED';
-      msg = 'Building lean muscle could help you reach a healthier range. Our trainers can design a safe, structured programme to help you gain strength.';
-    } else if (bmi < 25) {
-      cat = 'Healthy Weight'; color = '#22c55e';
-      msg = "You're in a great range. Keep the momentum going - our gym will help you maintain it and push your performance even further.";
-    } else if (bmi < 30) {
-      cat = 'Overweight'; color = '#F5A623';
-      msg = 'A few consistent changes make a big difference. Let our expert coaches craft a plan tailored to your lifestyle and goals.';
-    } else {
-      cat = 'Obese'; color = '#8d0422';
-      msg = 'The best time to start is today. Our trainers specialise in building progressive programmes that meet you exactly where you are.';
-    }
-    var catEl = document.getElementById('bmiCat');
-    catEl.textContent = cat; catEl.style.color = color;
-    document.getElementById('bmiMsg').textContent = msg;
-    document.getElementById('bmiResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
 })();</script>
 
 

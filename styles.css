@@ -258,6 +258,17 @@ h1, h2, h3, h4 {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 16px 20px; background: var(--card);
   border-radius: 10px; border-left: 3px solid var(--amber);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+.about-feature:hover {
+  transform: translateX(6px);
+  background: var(--dark);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35), -3px 0 0 var(--amber);
+}
+.about-feature:hover .about-feature-icon {
+  background: rgba(245,166,35,0.18);
+  transition: background 0.25s ease;
 }
 .about-feature-icon {
   width: 34px; height: 34px; flex-shrink: 0;
@@ -1187,7 +1198,266 @@ h1 span, h2 span, .section-title span {
   .service-icon { margin: 0 auto 18px; }
 }
 
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  width: 42px; height: 42px; border: none; border-radius: 50%; cursor: pointer;
+  background: rgba(255,255,255,0.08); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-left: 12px; flex-shrink: 0; position: relative;
+}
+.theme-toggle:hover { background: rgba(245,166,35,0.2); color: var(--amber); transform: scale(1.08); }
+.theme-toggle svg { width: 20px; height: 20px; transition: transform 0.4s ease, opacity 0.3s; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
 
+/* Mobile theme toggle in mobile nav */
+.mobile-theme-toggle {
+  width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50%;
+  background: rgba(255,255,255,0.06); color: var(--white); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.mobile-theme-toggle:hover { background: rgba(245,166,35,0.15); border-color: var(--amber); color: var(--amber); }
+.mobile-theme-toggle svg { width: 18px; height: 18px; }
+.mobile-theme-toggle .icon-sun { display: none; }
+.mobile-theme-toggle .icon-moon { display: block; }
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] {
+  --black:   #FAFAFA;
+  --dark:    #F0F0F2;
+  --card:    #FFFFFF;
+  --white:   #1A1A1A;
+  --gray:    #555555;
+  --border:  rgba(0,0,0,0.08);
+}
+[data-theme="light"] body { background: #FAFAFA; color: #1A1A1A; }
+
+/* Toggle icon swap */
+[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle { background: rgba(255,255,255,0.8); color: #1A1A1A; backdrop-filter: blur(4px); }
+[data-theme="light"] .theme-toggle:hover { background: rgba(245,166,35,0.9); color: var(--black); }
+[data-theme="light"] .mobile-theme-toggle .icon-sun { display: block; }
+[data-theme="light"] .mobile-theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .mobile-theme-toggle { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color: #1A1A1A; }
+
+/* Navbar */
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.06);
+  backdrop-filter: blur(12px);
+}
+[data-theme="light"] .navbar.solid { background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.06); }
+[data-theme="light"] .navbar.scrolled .nav-logo-text,
+[data-theme="light"] .navbar.solid .nav-logo-text { color: #1A1A1A; }
+[data-theme="light"] .navbar.scrolled .nav-links a,
+[data-theme="light"] .navbar.solid .nav-links a { color: rgba(0,0,0,0.65); }
+[data-theme="light"] .navbar.scrolled .nav-links a:hover,
+[data-theme="light"] .navbar.scrolled .nav-links a.active,
+[data-theme="light"] .navbar.solid .nav-links a:hover,
+[data-theme="light"] .navbar.solid .nav-links a.active { color: var(--amber); }
+[data-theme="light"] .navbar.scrolled .mobile-toggle span,
+[data-theme="light"] .navbar.solid .mobile-toggle span { background: #1A1A1A; }
+[data-theme="light"] .navbar.scrolled .theme-toggle,
+[data-theme="light"] .navbar.solid .theme-toggle { background: rgba(0,0,0,0.06); color: #1A1A1A; }
+
+/* Mobile nav stays dark for contrast */
+[data-theme="light"] .mobile-nav { background: #080808; }
+
+/* Cards — white with subtle shadow */
+[data-theme="light"] .service-card,
+[data-theme="light"] .padel-feat-card,
+[data-theme="light"] .value-card,
+[data-theme="light"] .class-card,
+[data-theme="light"] .padel-card,
+[data-theme="light"] .padel-feature,
+[data-theme="light"] .mission-card,
+[data-theme="light"] .membership-card,
+[data-theme="light"] .padel-price-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .contact-form-wrap,
+[data-theme="light"] .contact-card,
+[data-theme="light"] .bmi-card,
+[data-theme="light"] .about-feature,
+[data-theme="light"] .padel-mpesa-card,
+[data-theme="light"] .mpesa-info-card {
+  background: #FFFFFF; border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+[data-theme="light"] .service-card:hover,
+[data-theme="light"] .padel-feat-card:hover,
+[data-theme="light"] .class-card:hover,
+[data-theme="light"] .padel-card:hover,
+[data-theme="light"] .padel-feature:hover,
+[data-theme="light"] .mission-card:hover,
+[data-theme="light"] .membership-card:hover,
+[data-theme="light"] .padel-price-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Featured cards keep amber tint */
+[data-theme="light"] .membership-featured { background: linear-gradient(135deg, rgba(245,166,35,0.12), #FFFFFF); border-color: var(--amber); }
+[data-theme="light"] .padel-price-featured { background: linear-gradient(135deg, rgba(245,166,35,0.1), #FFFFFF); border-color: var(--amber); }
+
+/* Form fields */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+  background: #F5F5F7; border-color: rgba(0,0,0,0.1); color: #1A1A1A;
+}
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group select:focus,
+[data-theme="light"] .form-group textarea:focus { border-color: var(--amber); }
+[data-theme="light"] .form-group select option { background: #FFFFFF; color: #1A1A1A; }
+
+/* BMI fields */
+[data-theme="light"] .bmi-input-wrap { background: #F5F5F7; border-color: rgba(0,0,0,0.1); }
+[data-theme="light"] .bmi-input-wrap input { color: #1A1A1A; }
+[data-theme="light"] .bmi-input-wrap input::placeholder { color: rgba(0,0,0,0.3); }
+[data-theme="light"] .bmi-unit-toggle { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .bmi-unit-btn { color: #555; }
+[data-theme="light"] .bmi-num { color: #1A1A1A; }
+[data-theme="light"] .bmi-msg { background: rgba(245,166,35,0.06); }
+
+/* Page hero — keep dark (has overlays) */
+[data-theme="light"] .page-hero {
+  background: linear-gradient(135deg, #1A1A1A 0%, rgba(245,166,35,0.2) 100%);
+}
+[data-theme="light"] .page-hero h1,
+[data-theme="light"] .page-hero p,
+[data-theme="light"] .page-hero-content h1,
+[data-theme="light"] .page-hero-content p { color: #FFFFFF; }
+[data-theme="light"] .page-hero-content p { color: rgba(255,255,255,0.8); }
+
+/* Hero section — stays dark */
+[data-theme="light"] .hero h1,
+[data-theme="light"] .hero p { color: #FFFFFF; }
+[data-theme="light"] .hero p { color: rgba(255,255,255,0.8) !important; }
+
+/* CTA section — stays dark (crimson gradient) */
+[data-theme="light"] .cta-section h2,
+[data-theme="light"] .cta-section p,
+[data-theme="light"] .cta-text h2,
+[data-theme="light"] .cta-text > p { color: #FFFFFF; }
+[data-theme="light"] .cta-text > p { color: rgba(255,255,255,0.85); }
+
+/* Footer — stays dark */
+[data-theme="light"] .footer,
+[data-theme="light"] footer { background: #080808; border-top-color: rgba(255,255,255,0.08); }
+[data-theme="light"] .footer-grid,
+[data-theme="light"] .footer-bottom,
+[data-theme="light"] .footer-desc,
+[data-theme="light"] .footer-col ul a,
+[data-theme="light"] .footer-logo span,
+[data-theme="light"] .footer-brand-logo span { color: rgba(255,255,255,0.7); }
+[data-theme="light"] .footer-col h4 { color: var(--amber); }
+[data-theme="light"] .footer-bottom { border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+[data-theme="light"] .footer-social a { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+[data-theme="light"] .footer-social a:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Section icons backgrounds */
+[data-theme="light"] .service-icon { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.2); }
+[data-theme="light"] .about-feature-icon { background: rgba(245,166,35,0.1); }
+[data-theme="light"] .contact-icon,
+[data-theme="light"] .contact-card-icon { background: rgba(245,166,35,0.1); }
+[data-theme="light"] .mission-icon { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.2); }
+
+/* Badges / overlays on images keep dark */
+[data-theme="light"] .about-img-badge,
+[data-theme="light"] .padel-visual-cta,
+[data-theme="light"] .values-badge,
+[data-theme="light"] .padel-teaser-badge,
+[data-theme="light"] .padel-court-badge { background: rgba(10,10,10,0.92); border-color: rgba(255,255,255,0.08); }
+[data-theme="light"] .about-img-badge h4,
+[data-theme="light"] .padel-visual-cta h4,
+[data-theme="light"] .values-badge strong { color: #FFFFFF; }
+[data-theme="light"] .about-img-badge p,
+[data-theme="light"] .padel-visual-cta p,
+[data-theme="light"] .values-badge span,
+[data-theme="light"] .padel-teaser-badge span { color: rgba(255,255,255,0.6); }
+
+/* Padel banner stays dark */
+[data-theme="light"] .padel-banner h2,
+[data-theme="light"] .padel-banner p { color: #FFFFFF; }
+[data-theme="light"] .padel-banner p { color: rgba(255,255,255,0.85); }
+
+/* Ghost / outline buttons */
+[data-theme="light"] .btn-secondary,
+[data-theme="light"] .btn-ghost,
+[data-theme="light"] .btn-ghost-sm { border-color: rgba(0,0,0,0.2); color: #1A1A1A; }
+[data-theme="light"] .btn-secondary:hover,
+[data-theme="light"] .btn-ghost:hover,
+[data-theme="light"] .btn-ghost-sm:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Gallery overlay text stays white */
+[data-theme="light"] .gallery-overlay h5,
+[data-theme="light"] .gallery-page-overlay span { color: #FFFFFF; }
+
+/* Class level badges */
+[data-theme="light"] .level-all { color: #FFFFFF; }
+
+/* Maroon text glow — soften for light bg */
+[data-theme="light"] h1 span,
+[data-theme="light"] h2 span,
+[data-theme="light"] .section-title span {
+  text-shadow: none;
+}
+
+/* Lightbox stays dark */
+[data-theme="light"] .lightbox { background: rgba(0,0,0,0.96); }
+[data-theme="light"] .lightbox-close,
+[data-theme="light"] .lightbox-caption { color: #FFFFFF; }
+
+/* Contact item text */
+[data-theme="light"] .contact-item p,
+[data-theme="light"] .contact-item a,
+[data-theme="light"] .contact-card-text p,
+[data-theme="light"] .contact-card-text a { color: #1A1A1A; }
+
+/* Back to top button */
+[data-theme="light"] .hero-scroll { color: rgba(255,255,255,0.45); }
+
+/* Padel section watermark */
+[data-theme="light"] .padel-section::before { color: rgba(245,166,35,0.04); }
+[data-theme="light"] .padel-watermark { color: rgba(245,166,35,0.04); }
+
+/* Membership & pricing text */
+[data-theme="light"] .membership-card h3,
+[data-theme="light"] .membership-price,
+[data-theme="light"] .padel-price-amount { color: #1A1A1A; }
+[data-theme="light"] .membership-featured .membership-price { color: var(--amber); }
+[data-theme="light"] .mpesa-info-card strong { color: #1A1A1A; }
+
+/* Padel teaser border */
+[data-theme="light"] .padel-teaser-inner { border-color: rgba(245,166,35,0.25); background: #FFFFFF; }
+
+/* Gallery preview items on light */
+[data-theme="light"] .preview-item::after { background: linear-gradient(to top, rgba(245,166,35,0.5) 0%, transparent 60%); }
+
+/* Section backgrounds using hardcoded dark values */
+[data-theme="light"] .bmi-section { background: #F5F5F7; }
+[data-theme="light"] .facility-card-info h3 { color: #FFFFFF; }
+[data-theme="light"] .facility-card-info p { color: rgba(255,255,255,0.7); }
+
+/* Smooth transition on theme change */
+html { transition: background-color 0.35s ease; }
+body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
+.bmi-card, .contact-form, .contact-form-wrap, .mission-card, .membership-card,
+.padel-price-card, .about-feature, .contact-card, .padel-feature,
+.form-group input, .form-group select, .form-group textarea,
+.bmi-input-wrap, .bmi-input-wrap input {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hide nav-links toggle on mobile, show mobile toggle's version */
+@media (max-width: 768px) {
+  .theme-toggle { display: none; }
+}
+@media (min-width: 769px) {
+  .mobile-theme-toggle { display: none; }
+}
 
 
 
