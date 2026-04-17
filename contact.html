@@ -330,7 +330,7 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.05 });
 revealEls.forEach(el => revealObs.observe(el));
-setTimeout(() => { revealEls.forEach(el => el.classList.add('active')); }, 1500);
+
 
 
 // Back to top

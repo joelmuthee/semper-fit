@@ -1387,6 +1387,11 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .btn-secondary,
 [data-theme="light"] .btn-ghost,
 [data-theme="light"] .btn-ghost-sm { border-color: rgba(0,0,0,0.2); color: #1A1A1A; }
+/* Keep hero & page-hero buttons white — they always sit on a dark image overlay */
+[data-theme="light"] .hero .btn-secondary,
+[data-theme="light"] .page-hero .btn-secondary { border-color: rgba(255,255,255,0.5); color: #FFFFFF; }
+[data-theme="light"] .hero .btn-secondary:hover,
+[data-theme="light"] .page-hero .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
 [data-theme="light"] .btn-secondary:hover,
 [data-theme="light"] .btn-ghost:hover,
 [data-theme="light"] .btn-ghost-sm:hover { border-color: var(--amber); color: var(--amber); }
