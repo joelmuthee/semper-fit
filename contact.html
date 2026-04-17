@@ -322,15 +322,15 @@ document.getElementById('mobileToggle').addEventListener('click', () => document
 document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
 document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
 
-// Reveal animations (bi-directional)
+// Reveal animations
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('active');
-    else e.target.classList.remove('active');
+    if (e.isIntersecting) { e.target.classList.add('active'); revealObs.unobserve(e.target); }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05 });
 revealEls.forEach(el => revealObs.observe(el));
+setTimeout(() => { revealEls.forEach(el => el.classList.add('active')); }, 1500);
 
 
 // Back to top

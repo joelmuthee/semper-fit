@@ -509,15 +509,15 @@ const statObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 statEls.forEach(el => statObs.observe(el));
 
-// Reveal animations (bi-directional)
+// Reveal animations
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('active');
-    else e.target.classList.remove('active');
+    if (e.isIntersecting) { e.target.classList.add('active'); revealObs.unobserve(e.target); }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05 });
 revealEls.forEach(el => revealObs.observe(el));
+setTimeout(() => { revealEls.forEach(el => el.classList.add('active')); }, 1500);
 
 // Lazy image shimmer
 document.querySelectorAll('img[loading="lazy"]').forEach(img => {
