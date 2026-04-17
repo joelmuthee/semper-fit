@@ -1258,8 +1258,10 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .navbar.scrolled .nav-links a.active,
 [data-theme="light"] .navbar.solid .nav-links a:hover,
 [data-theme="light"] .navbar.solid .nav-links a.active { color: var(--amber); }
+/* Hamburger: dark on scrolled/solid navbar (light bg), white on transparent navbar (dark hero behind) */
 [data-theme="light"] .navbar.scrolled .mobile-toggle span,
 [data-theme="light"] .navbar.solid .mobile-toggle span { background: #1A1A1A; }
+[data-theme="light"] .navbar:not(.scrolled):not(.solid) .mobile-toggle span { background: #FFFFFF; }
 [data-theme="light"] .navbar.scrolled .theme-toggle,
 [data-theme="light"] .navbar.solid .theme-toggle { background: rgba(0,0,0,0.06); color: #1A1A1A; }
 
@@ -1363,6 +1365,9 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .contact-icon,
 [data-theme="light"] .contact-card-icon { background: rgba(245,166,35,0.1); }
 [data-theme="light"] .mission-icon { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.2); }
+
+/* Pills on coloured/dark backgrounds always keep white text */
+[data-theme="light"] .padel-badge { color: #FFFFFF; }
 
 /* Badges / overlays on images keep dark */
 [data-theme="light"] .about-img-badge,
