@@ -1432,15 +1432,38 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .padel-banner p { color: #FFFFFF; }
 [data-theme="light"] .padel-banner p { color: rgba(255,255,255,0.85); }
 
-/* Buttons on dark overlays (hero, page-hero, CTA) always stay white */
+/* Buttons on dark overlays — all sections that stay dark in light mode */
 [data-theme="light"] .hero .btn-secondary,
 [data-theme="light"] .hero .btn-ghost,
 [data-theme="light"] .page-hero .btn-secondary,
 [data-theme="light"] .page-hero .btn-ghost,
-[data-theme="light"] .cta-section .btn-outline-white { color: #FFFFFF; }
+[data-theme="light"] .page-hero .btn-ghost-sm,
+[data-theme="light"] .page-hero .btn-secondary-sm,
+[data-theme="light"] .cta-section .btn-ghost,
+[data-theme="light"] .cta-section .btn-secondary,
+[data-theme="light"] .cta-section .btn-outline-white,
+[data-theme="light"] .gallery-preview .btn-secondary,
+[data-theme="light"] .gallery-preview .btn-ghost,
+[data-theme="light"] .padel-section .btn-secondary,
+[data-theme="light"] .padel-section .btn-ghost,
+[data-theme="light"] .padel-banner .btn-secondary,
+[data-theme="light"] .padel-banner .btn-ghost { color: #FFFFFF; border-color: rgba(255,255,255,0.35); }
+/* Hover states */
 [data-theme="light"] .hero .btn-secondary:hover,
 [data-theme="light"] .hero .btn-ghost:hover,
-[data-theme="light"] .page-hero .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
+[data-theme="light"] .page-hero .btn-secondary:hover,
+[data-theme="light"] .page-hero .btn-ghost:hover,
+[data-theme="light"] .page-hero .btn-ghost-sm:hover,
+[data-theme="light"] .cta-section .btn-ghost:hover,
+[data-theme="light"] .cta-section .btn-secondary:hover,
+[data-theme="light"] .gallery-preview .btn-secondary:hover,
+[data-theme="light"] .gallery-preview .btn-ghost:hover,
+[data-theme="light"] .padel-section .btn-secondary:hover,
+[data-theme="light"] .padel-section .btn-ghost:hover,
+[data-theme="light"] .padel-banner .btn-secondary:hover,
+[data-theme="light"] .padel-banner .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+/* btn-light uses var(--white) as background — keep it white */
+[data-theme="light"] .cta-section .btn-light { background: #FFFFFF; }
 
 /* Gallery overlay text stays white */
 [data-theme="light"] .gallery-overlay h5,
