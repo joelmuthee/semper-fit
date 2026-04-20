@@ -726,6 +726,28 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-pricing-block h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); text-transform: uppercase; margin-bottom: 48px; }
 .padel-pricing-block h3 span { color: var(--amber); }
 .padel-pricing-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: left; }
+
+/* ===== PADEL BOOKING CALENDARS ===== */
+.padel-booking-block { text-align: center; padding-top: 60px; }
+.padel-booking-block h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); text-transform: uppercase; margin-bottom: 12px; }
+.padel-booking-block h3 span { color: var(--crimson); }
+.padel-booking-sub { color: var(--text-muted); max-width: 520px; margin: 0 auto 40px; font-size: 1rem; }
+.padel-booking-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+.padel-booking-tab {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 28px; border-radius: 50px;
+  border: 2px solid var(--border);
+  background: transparent; color: var(--text-muted);
+  font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  cursor: pointer; transition: all 0.25s;
+}
+.padel-booking-tab:hover { border-color: var(--crimson); color: var(--text); }
+.padel-booking-tab.active { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.padel-calendar-wrap { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--card-bg); }
+.padel-calendar-pane { display: none; }
+.padel-calendar-pane.active { display: block; }
+
 /* ===== BMI CALCULATOR ===== */
 .bmi-section {
   padding: 100px 60px;
