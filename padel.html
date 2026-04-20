@@ -594,7 +594,7 @@ document.querySelectorAll('img[loading="lazy"]').forEach(img => {
   else img.addEventListener('load', () => img.classList.add('loaded'));
 });
 
-// Booking calendar tabs — lazy-load 90 min iframe on first switch
+// Booking calendar tabs
 document.querySelectorAll('.padel-booking-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.padel-booking-tab').forEach(t => t.classList.remove('active'));
@@ -602,8 +602,9 @@ document.querySelectorAll('.padel-booking-tab').forEach(tab => {
     tab.classList.add('active');
     const pane = document.getElementById('cal-' + tab.dataset.tab);
     pane.classList.add('active');
-    const lazyIframe = pane.querySelector('iframe[data-src]');
-    if (lazyIframe) { lazyIframe.src = lazyIframe.dataset.src; lazyIframe.removeAttribute('data-src'); }
+    // Force GHL to re-send height message now that pane is visible
+    const iframe = pane.querySelector('iframe');
+    if (iframe && iframe.src) { const s = iframe.src; iframe.src = ''; iframe.src = s; }
   });
 });
 
