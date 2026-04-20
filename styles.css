@@ -825,7 +825,8 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 
 @media (min-width: 1024px) { .padel-pricing-cards { grid-template-columns: repeat(4, 1fr); } }
 .padel-price-amount { font-size: 1.8rem; font-weight: 800; color: var(--white); margin-bottom: 14px; font-family: 'Montserrat', sans-serif; }
-.padel-mpesa-block { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+.padel-mpesa-block { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+@media (min-width: 520px) { .padel-mpesa-block { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 768px) { .padel-mpesa-block { grid-template-columns: repeat(4, 1fr); } }
 .padel-mpesa-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
 .padel-mpesa-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
