@@ -732,27 +732,33 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-booking-block h3 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); text-transform: uppercase; margin-bottom: 12px; }
 .padel-booking-block h3 span { color: var(--crimson); }
 .padel-booking-sub { color: var(--text-muted); max-width: 520px; margin: 0 auto 40px; font-size: 1rem; }
-.padel-booking-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+.padel-booking-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; }
 .padel-booking-tab {
-  display: flex; align-items: center; gap: 8px;
-  padding: 12px 28px; border-radius: 50px;
+  display: flex; align-items: center; gap: 8px; flex: 1; max-width: 220px;
+  padding: 12px 20px; border-radius: 50px;
   border: 2px solid var(--border);
   background: transparent; color: var(--text-muted);
-  font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.05em;
   cursor: pointer; transition: all 0.25s;
 }
 .padel-booking-tab:hover { border-color: var(--crimson); color: var(--text); }
 .padel-booking-tab.active { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.tab-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+.tab-duration { font-size: 0.9rem; line-height: 1.2; }
+.tab-price { font-size: 0.75rem; font-weight: 600; opacity: 0.8; letter-spacing: 0.03em; }
 .padel-booking-notice {
   display: flex; align-items: flex-start; gap: 12px;
   background: rgba(141,4,34,0.06);
   border-left: 4px solid var(--crimson);
   border-radius: 0 8px 8px 0;
-  padding: 16px 20px; margin: 0 auto 24px;
+  padding: 14px 16px; margin: 0 auto 24px;
   max-width: 640px;
-  font-size: 0.9rem; color: var(--text); line-height: 1.7; text-align: left;
+  font-size: 0.88rem; color: var(--text); line-height: 1.65; text-align: left;
   box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .padel-booking-notice { font-size: 0.83rem; padding: 12px 14px; gap: 10px; }
 }
 .padel-booking-notice svg { stroke: var(--crimson); flex-shrink: 0; margin-top: 3px; }
 .padel-booking-notice span { min-width: 0; word-wrap: break-word; overflow-wrap: break-word; }
