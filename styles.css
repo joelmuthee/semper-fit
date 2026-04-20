@@ -211,6 +211,35 @@ h1, h2, h3, h4 {
   animation: heroFadeUp 0.85s cubic-bezier(0.22,1,0.36,1) both;
   animation-delay: 0.8s;
 }
+.hero-facts {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 0;
+  margin: 20px 0 24px;
+  animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
+  animation-delay: 0.85s;
+}
+.hero-fact {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  color: #fff; font-size: 0.88rem; font-family: 'Montserrat', sans-serif;
+  font-weight: 600; letter-spacing: 0.03em;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+.hero-fact strong { color: var(--amber); }
+.hero-fact svg { stroke: var(--amber); flex-shrink: 0; }
+.hero-fact-sep {
+  width: 20px; height: 1px;
+  background: rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+@media (max-width: 520px) {
+  .hero-facts { gap: 8px; }
+  .hero-fact-sep { display: none; }
+}
 .hero-btns {
   display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
   animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
