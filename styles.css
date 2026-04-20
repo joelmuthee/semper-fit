@@ -745,8 +745,18 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-booking-tab:hover { border-color: var(--crimson); color: var(--text); }
 .padel-booking-tab.active { background: var(--crimson); border-color: var(--crimson); color: #fff; }
 .padel-calendar-wrap { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--card-bg); }
-.padel-calendar-pane { display: none; }
+.padel-calendar-pane { display: none; position: relative; }
 .padel-calendar-pane.active { display: block; }
+.cal-loader {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 60px 20px; color: var(--text-muted); font-size: 0.9rem;
+}
+.cal-spinner {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 3px solid var(--border); border-top-color: var(--crimson);
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 /* ===== BMI CALCULATOR ===== */
 .bmi-section {
