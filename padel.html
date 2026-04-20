@@ -165,7 +165,7 @@
     </div>
     <h1>Play Padel.<br><span>Nairobi's Best Courts.</span></h1>
     <div class="hero-facts">
-      <div class="hero-fact">
+      <div class="hero-fact hero-fact--highlight">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M12 3v18M2 12h20"/></svg>
         <span><strong>2 Padel Courts</strong></span>
       </div>
@@ -616,7 +616,10 @@ document.querySelectorAll('.padel-price-cta[data-session]').forEach(btn => {
       t.classList.toggle('active', t.dataset.tab === session);
     });
     document.querySelectorAll('.padel-calendar-pane').forEach(p => p.classList.remove('active'));
-    document.getElementById('cal-' + session).classList.add('active');
+    const targetPane = document.getElementById('cal-' + session);
+    targetPane.classList.add('active');
+    const lazyIframe = targetPane.querySelector('iframe[data-src]');
+    if (lazyIframe) { lazyIframe.src = lazyIframe.dataset.src; lazyIframe.removeAttribute('data-src'); }
     document.getElementById('book-court').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
