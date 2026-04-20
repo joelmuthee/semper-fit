@@ -373,17 +373,29 @@
       <p class="padel-booking-sub">Pick your session length and choose a time that works for you — confirm your slot in seconds.</p>
       <div class="padel-booking-tabs">
         <button class="padel-booking-tab active" data-tab="60">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span class="tab-inner"><span class="tab-duration">60 Min</span><span class="tab-price">Ksh 3,000</span></span>
+          <span class="tab-badge">Most Popular</span>
+          <span class="tab-duration">60 Min</span>
+          <span class="tab-price">Ksh 3,000</span>
         </button>
         <button class="padel-booking-tab" data-tab="90">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <span class="tab-inner"><span class="tab-duration">90 Min</span><span class="tab-price">Ksh 4,000</span></span>
+          <span class="tab-badge tab-badge--hidden">Extended</span>
+          <span class="tab-duration">90 Min</span>
+          <span class="tab-price">Ksh 4,000</span>
         </button>
       </div>
       <div class="padel-booking-notice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="flex-shrink:0;margin-top:3px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        <span><strong>Pay 50% deposit within 5 minutes to secure your slot.</strong><br><span style="opacity:0.85;">M-Pesa · Paybill <strong>4122613</strong><br>Account: <strong>Padel</strong></span></span>
+        <div class="notice-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="notice-body">
+          <p class="notice-headline">Pay 50% deposit within 5 minutes to secure your slot.</p>
+          <div class="notice-payment">
+            <span class="notice-chip">M-Pesa</span>
+            <span class="notice-detail">Paybill <strong>4122613</strong></span>
+            <span class="notice-sep">·</span>
+            <span class="notice-detail">Account: <strong>Padel</strong></span>
+          </div>
+        </div>
       </div>
       <div class="padel-calendar-wrap">
         <div class="padel-calendar-pane active" id="cal-60">
