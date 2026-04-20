@@ -788,6 +788,8 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .notice-detail strong { color: var(--text); font-weight: 700; }
 .notice-sep { color: var(--border); font-size: 0.9rem; }
 @media (max-width: 480px) {
+  .padel-booking-tabs { flex-direction: column; align-items: stretch; gap: 12px; }
+  .padel-booking-tab { max-width: 100%; padding: 16px 20px 14px; }
   .padel-booking-notice { padding: 14px 16px; gap: 12px; }
   .notice-sep { display: none; }
   .notice-detail { display: block; }
@@ -876,7 +878,7 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-mpesa-block { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
 @media (min-width: 520px) { .padel-mpesa-block { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 768px) { .padel-mpesa-block { grid-template-columns: repeat(4, 1fr); } }
-.padel-mpesa-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.padel-mpesa-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; text-align: left; }
 .padel-mpesa-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .padel-mpesa-icon svg { width: 18px; height: 18px; stroke: var(--amber); }
 .padel-mpesa-card h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); margin-bottom: 4px; }
