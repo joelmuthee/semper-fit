@@ -1701,7 +1701,7 @@ body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
 }
 .court-tile svg {
   width: 100%;
-  max-width: 68px;
+  max-width: 44px;
   stroke: var(--gray);
   fill: none;
   stroke-linecap: round;
@@ -1727,7 +1727,7 @@ body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
 .courts-trio--lg .courts-trio-header em { font-size: 0.78rem; }
 .courts-trio--lg .courts-trio-grid { gap: 14px; }
 .courts-trio--lg .court-tile { padding: 18px 12px 14px; }
-.courts-trio--lg .court-tile svg { max-width: 90px; }
+.courts-trio--lg .court-tile svg { max-width: 58px; }
 .courts-trio--lg .court-tile span { font-size: 0.72rem; }
 
 @media (max-width: 480px) {
