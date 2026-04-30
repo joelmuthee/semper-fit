@@ -1646,5 +1646,94 @@ body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
   .mobile-theme-toggle { display: none; }
 }
 
+/* ── 3 Courts Graphic ───────────────────────────────────────── */
+.courts-trio {
+  margin: 28px 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px 18px;
+  border-top: 3px solid var(--amber);
+}
+.courts-trio-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.courts-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--amber);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.courts-trio-header strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.courts-trio-header em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.03em;
+}
+.courts-trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.court-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.25s, background 0.25s;
+}
+.court-tile svg {
+  width: 100%;
+  max-width: 68px;
+  stroke: var(--gray);
+  fill: none;
+  stroke-linecap: round;
+}
+.court-tile span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+}
+.court-tile.courts-active {
+  border-color: rgba(245,166,35,0.55);
+  background: rgba(245,166,35,0.06);
+}
+.court-tile.courts-active svg { stroke: var(--amber); }
+.court-tile.courts-active span { color: var(--amber); }
+
+/* Larger variant for padel page */
+.courts-trio--lg { padding: 28px 32px 24px; }
+.courts-trio--lg .courts-num { font-size: 3.8rem; }
+.courts-trio--lg .courts-trio-header strong { font-size: 1rem; }
+.courts-trio--lg .courts-trio-header em { font-size: 0.78rem; }
+.courts-trio--lg .courts-trio-grid { gap: 14px; }
+.courts-trio--lg .court-tile { padding: 18px 12px 14px; }
+.courts-trio--lg .court-tile svg { max-width: 90px; }
+.courts-trio--lg .court-tile span { font-size: 0.72rem; }
+
+@media (max-width: 480px) {
+  .courts-trio--lg { padding: 20px 16px 16px; }
+  .courts-trio--lg .courts-num { font-size: 2.8rem; }
+}
+
 
 
