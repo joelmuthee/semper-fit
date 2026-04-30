@@ -1614,6 +1614,24 @@ h1 span, h2 span, .section-title span {
 [data-theme="light"] .membership-featured .membership-price { color: var(--amber); }
 [data-theme="light"] .mpesa-info-card strong { color: #1A1A1A; }
 
+/* Courts graphic light mode */
+[data-theme="light"] .courts-trio {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+[data-theme="light"] .courts-trio-header { border-bottom-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .court-tile {
+  background: #F5F5F7;
+  border-color: rgba(0,0,0,0.1);
+  color: #555555;
+}
+[data-theme="light"] .court-tile.courts-active {
+  background: rgba(245,166,35,0.08);
+  border-color: rgba(245,166,35,0.45);
+  color: var(--amber);
+}
+
 /* Padel teaser border */
 [data-theme="light"] .padel-teaser-inner { border-color: rgba(245,166,35,0.25); background: #FFFFFF; }
 
@@ -1695,8 +1713,9 @@ body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
   gap: 8px;
   padding: 14px 8px 12px;
   border-radius: 8px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--gray);
   transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
   cursor: pointer;
 }
@@ -1711,7 +1730,7 @@ body, .navbar, .service-card, .padel-feat-card, .class-card, .padel-card,
 .court-tile svg {
   width: 100%;
   max-width: 44px;
-  stroke: var(--gray);
+  stroke: currentColor;
   fill: none;
   stroke-linecap: round;
 }
