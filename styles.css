@@ -330,12 +330,12 @@ h1, h2, h3, h4 {
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   cursor: default;
 }
-.about-feature:hover {
+.about-feature:hover, .about-feature:active {
   transform: translateY(-5px) scale(1.02);
   border-left-width: 5px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.18), -5px 0 0 var(--amber);
 }
-.about-feature:hover .about-feature-icon {
+.about-feature:hover .about-feature-icon, .about-feature:active .about-feature-icon {
   background: rgba(245,166,35,0.25);
   transform: scale(1.1);
   transition: background 0.3s ease, transform 0.3s ease;
@@ -374,10 +374,15 @@ h1, h2, h3, h4 {
 .padel-feat-card {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 12px; padding: 22px 18px; border-top: 3px solid var(--crimson);
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.padel-feat-card:hover { border-top-color: var(--amber); transform: translateY(-4px); }
-.padel-feat-card svg { width: 24px; height: 24px; stroke: var(--amber); fill: none; stroke-width: 2; margin-bottom: 12px; }
+.padel-feat-card:hover, .padel-feat-card:active {
+  border-top-color: var(--amber); border-top-width: 5px;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(245,166,35,0.2);
+}
+.padel-feat-card svg { width: 24px; height: 24px; stroke: var(--amber); fill: none; stroke-width: 2; margin-bottom: 12px; transition: transform 0.3s ease; }
+.padel-feat-card:hover svg, .padel-feat-card:active svg { transform: scale(1.2) rotate(-5deg); }
 .padel-feat-card h4 { font-size: 0.88rem; margin-bottom: 6px; }
 .padel-feat-card p { font-size: 0.8rem; color: var(--gray); }
 .padel-visual { position: relative; border-radius: 20px; overflow: hidden; height: 520px; }
@@ -533,9 +538,10 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-banner-img { border-radius: 14px; overflow: hidden; height: 340px; }
 .padel-banner-img img { width: 100%; height: 100%; object-fit: cover; }
 .padel-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.padel-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 32px 26px; border-top: 3px solid var(--crimson); transition: all 0.3s; }
-.padel-card:hover { border-top-color: var(--amber); transform: translateY(-4px); }
-.padel-card svg { width: 30px; height: 30px; stroke: var(--amber); fill: none; stroke-width: 2; margin-bottom: 16px; }
+.padel-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 32px 26px; border-top: 3px solid var(--crimson); transition: all 0.3s ease; }
+.padel-card:hover, .padel-card:active { border-top-color: var(--amber); border-top-width: 5px; transform: translateY(-8px) scale(1.03); box-shadow: 0 18px 40px rgba(245,166,35,0.18); }
+.padel-card svg { width: 30px; height: 30px; stroke: var(--amber); fill: none; stroke-width: 2; margin-bottom: 16px; transition: transform 0.3s ease; }
+.padel-card:hover svg, .padel-card:active svg { transform: scale(1.2) rotate(-5deg); }
 .padel-card h3 { font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
 .padel-card p { font-size: 0.83rem; color: var(--gray); line-height: 1.8; }
 
@@ -911,8 +917,10 @@ footer { background: #080808; padding: 80px 60px 0; border-top: 1px solid var(--
 .padel-mpesa-block { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
 @media (min-width: 520px) { .padel-mpesa-block { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 768px) { .padel-mpesa-block { grid-template-columns: repeat(4, 1fr); } }
-.padel-mpesa-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-.padel-mpesa-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.25); border-color: rgba(245,166,35,0.35); }
+.padel-mpesa-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease; }
+.padel-mpesa-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 16px 40px rgba(0,0,0,0.3); border-color: var(--amber); background: rgba(245,166,35,0.06); }
+.padel-mpesa-icon { transition: background 0.3s ease, transform 0.3s ease; }
+.padel-mpesa-card:hover .padel-mpesa-icon { background: rgba(245,166,35,0.35); transform: scale(1.1) rotate(-5deg); }
 .padel-mpesa-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .padel-mpesa-icon svg { width: 18px; height: 18px; stroke: var(--amber); }
 .padel-mpesa-card h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); margin-bottom: 4px; }
