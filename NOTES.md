@@ -1,6 +1,13 @@
 # Semper Fit website: build notes
 
-Static site on GitHub Pages (`semperfit.essenceautomations.com`). Light theme by default,
+Static site on **Cloudflare Pages**, project `semper-fit` (Stawisystems account
+`58685495706b973821d77208248c66fc`), custom domain `semperfit.essenceautomations.com`.
+**Not GitHub Pages, and pushing does NOT deploy:** the project says it is Git-connected but the
+link has been dead since about May 2026 (no build since 71179d4). Deploy by hand from the
+committed files, leaving out tools/, NOTES.md and booking-app/:
+`git archive HEAD | tar -x -C <dir>`, remove those, then
+`CLOUDFLARE_ACCOUNT_ID=58685495706b973821d77208248c66fc npx --yes wrangler@4.42.0 pages deploy <dir> --project-name semper-fit --branch main`.
+Found and done 2026-10-16 (deployment 0ce2c2f4). Light theme by default,
 with a dark toggle. The padel booking app lives in `booking-app/` (its own `NOTES.md`).
 
 ## How the pages are kept in step
