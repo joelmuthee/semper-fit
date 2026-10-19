@@ -169,18 +169,18 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="image" href="images/gym/hero.webp">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>document.documentElement.className+=' js';var t='light';try{t=localStorage.getItem('sf-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t);</script>
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=6">
 <script src="site.js?v=3" defer></script>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar" id="navbar">
+<nav class="navbar solid" id="navbar">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.jpg" alt="Semper Fit Gymnasium logo" width="90" height="90">
   </a>
@@ -231,63 +231,53 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <img src="images/gym/hero.webp" alt="A member training on the bench press at Semper Fit gym" fetchpriority="high" width="1440" height="960">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content" style="text-align:center; margin-left:auto; margin-right:auto;">
-    <div class="hero-badge">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      Gym and padel at SCIS, Karen
+<section class="pd-hero hm-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-hero-copy">
+      <p class="pd-kicker sf-rv">Gym and padel &middot; St. Christopher's, Karen</p>
+      <h1 class="pd-display sf-rv"><span>Train hard.</span><span class="pd-accent">Play padel.</span></h1>
+      <ul class="pd-facts sf-rv">
+        <li><b>Gym</b> classes and personal training</li>
+        <li><b>3</b> covered padel courts</li>
+        <li>Open <b>every day</b></li>
+      </ul>
+      <p class="pd-lead sf-rv">Semper Fit is the gym and the three padel courts at St. Christopher's International School, Karen.</p>
+      <div class="pd-ctas sf-rv">
+        <a href="book-padel.html" class="btn-primary">Book a court</a>
+        <a href="classes.html" class="pd-ghost">See the gym</a>
+      </div>
     </div>
-    <h1>Train Hard.<br><span>Play Padel.</span></h1>
-    <p>Semper Fit is the gym and the three covered padel courts at St. Christopher's International School, Karen.</p>
-    <div class="hero-btns">
-      <a href="book-padel.html" class="btn-primary">Book a court</a>
-      <a href="classes.html" class="btn-secondary">See the gym</a>
+    <div class="hm-collage sf-rv">
+      <figure class="hm-c1"><img src="images/gym/hero.webp" alt="A member on the bench press with a trainer spotting at Semper Fit" width="1440" height="960" fetchpriority="high"></figure>
+      <figure class="hm-c2"><img src="images/classes/padel-class.webp" alt="The covered padel courts at Semper Fit" width="1440" height="1440"></figure>
+      <span class="hm-badge"><b>Gym and padel</b>In one place, inside St. Christopher&#39;s</span>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="14" height="18" rx="7"/><path d="M8 5v4"/></svg>
-    Scroll
   </div>
 </section>
 
 <!-- TWO HALVES -->
-<section class="sf-halves" id="what">
-  <div class="section-header reveal">
-    <div class="section-label">One Club, Two Halves</div>
-    <h2 class="section-title">The Gym and <span>the Courts</span></h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="sf-halves-grid">
-    <a class="sf-half reveal" href="classes.html">
-      <div class="sf-half-img"><img src="images/gym/gym_3.webp" alt="Training on the gym floor at Semper Fit" loading="lazy" width="1440" height="1440"></div>
-      <div class="sf-half-body">
-        <h3>The Gym</h3>
-        <ul class="sf-ticks">
-          <li>Strength, cardio, boxing and group classes</li>
-          <li>Personal training, one to one</li>
-          <li>Membership by the term, the year or the day</li>
-          <li>Open early mornings, evenings and weekends</li>
-        </ul>
-        <span class="sf-text-link">See the gym &rarr;</span>
-      </div>
-    </a>
-    <a class="sf-half reveal" href="padel.html">
-      <div class="sf-half-img"><img src="images/gym/sf-padel.webp" alt="The three covered padel courts at Semper Fit" loading="lazy" width="1440" height="1440"></div>
-      <div class="sf-half-body">
-        <h3>The Padel Courts</h3>
-        <ul class="sf-ticks">
-          <li>Three covered, glass-walled courts</li>
-          <li>Court hire for 60 or 90 minutes, every day</li>
-          <li>Lessons with a coach, for beginners too</li>
-          <li>Club leagues, tournaments and events</li>
-        </ul>
-        <span class="sf-text-link">See padel &rarr;</span>
-      </div>
-    </a>
+<section class="hm-halves" id="what">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">One club, two halves</p>
+    <h2 class="pd-h2 sf-rv">The gym <span>and the courts.</span></h2>
+    <div class="hm-halves-grid">
+      <a class="hm-half sf-rv" href="classes.html">
+        <img src="images/gym/gym_3.webp" alt="Training on the gym floor at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div class="hm-half-body">
+          <h3 class="pd-display">The gym</h3>
+          <p>Strength, cardio, boxing and group classes. Personal training. Membership by the term, the year or the day.</p>
+          <span class="hm-arrow">See the gym &rarr;</span>
+        </div>
+      </a>
+      <a class="hm-half sf-rv" href="padel.html">
+        <img src="images/gym/sf-padel.webp" alt="The three covered padel courts at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div class="hm-half-body">
+          <h3 class="pd-display">Padel</h3>
+          <p>Three covered, glass-walled courts. 60 or 90 minutes, every day. Lessons, leagues and events.</p>
+          <span class="hm-arrow">See padel &rarr;</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -342,59 +332,28 @@
   </div>
 </section>
 
-<!-- ABOUT SNIPPET -->
-<section class="about-snippet">
-  <div class="about-img reveal-left">
-    <img src="images/gym/community.webp" alt="Members training together at Semper Fit" loading="lazy" width="1440" height="1440">
-  </div>
-  <div class="reveal-right">
-    <div class="section-label">About Semper Fit</div>
-    <h2 class="section-title">Always Fit.<br><span>Always Ready.</span></h2>
-    <div class="section-line"></div>
-    <p class="section-subtitle" style="margin-bottom: 28px;">Semper Fit means "always fit". It is the gym and padel club at St. Christopher's International School in Karen, for complete beginners and for people who have trained for years.</p>
-    <p style="color: var(--gray); font-size: 0.92rem; line-height: 1.8; margin-bottom: 32px;">Come for the weights, a boxing class, a session with a trainer or a game of padel with friends. Turning up regularly is what makes the difference, and we make it easy to keep coming back.</p>
-    <a href="about.html" class="btn-primary">About us</a>
+<!-- STATEMENT -->
+<section class="hm-statement">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">About Semper Fit</p>
+    <h2 class="hm-big sf-rv">Semper Fit means <span>always fit.</span></h2>
+    <p class="pd-body sf-rv">Turning up regularly matters more than anything else. So the gym is open early and late, the classes are small, and the courts are covered. For complete beginners and for people who have trained for years. <a class="pd-link" href="about.html">About us &rarr;</a></p>
   </div>
 </section>
 
-<!-- SERVICES / FACILITIES -->
-<section class="services-section">
-  <div class="section-header reveal">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Everything <span>Under One Roof</span></h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M6 4v16M18 4v16M2 8h4M18 8h4M2 16h4M18 16h4M6 12h12"/></svg></div>
-      <h3>Strength Training</h3>
-      <p>Free weights, barbells, racks and cable machines for every strength goal.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-      <h3>Cardio</h3>
-      <p>Treadmills, bikes and rowers for building fitness at your own pace.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></div>
-      <h3>Boxing</h3>
-      <p>Bags, pads and conditioning. A full-body workout and a good way to let off steam.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-      <h3>Padel</h3>
-      <p>Three covered courts for a game with friends, lessons, leagues and events.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>
-      <h3>Personal Training</h3>
-      <p>One-to-one sessions with a trainer, built around your goal.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Group Classes</h3>
-      <p>HIIT and group sessions with a coach, for all levels.</p>
-    </div>
+<!-- WHAT WE OFFER: numbered list, photo follows the row -->
+<section class="hm-list" id="offer">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">What we offer</p>
+    <h2 class="pd-h2 sf-rv">Six ways <span>to train.</span></h2>
+    <ol class="hm-rows">
+      <li class="sf-rv"><a href="classes.html#classes"><span class="hm-n">01</span><span class="hm-t">Strength</span><span class="hm-d">Free weights, racks and cable machines</span><img src="images/classes/strength-training.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+      <li class="sf-rv"><a href="classes.html#classes"><span class="hm-n">02</span><span class="hm-t">Cardio</span><span class="hm-d">Treadmills, bikes and rowers</span><img src="images/classes/cardio-zone.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+      <li class="sf-rv"><a href="classes.html#classes"><span class="hm-n">03</span><span class="hm-t">Boxing</span><span class="hm-d">Bags, pads and conditioning</span><img src="images/classes/boxing-combat.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+      <li class="sf-rv"><a href="classes.html#classes"><span class="hm-n">04</span><span class="hm-t">HIIT and groups</span><span class="hm-d">Short, hard sessions with a coach</span><img src="images/classes/hiit-group.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+      <li class="sf-rv"><a href="classes.html#personal-training"><span class="hm-n">05</span><span class="hm-t">Personal training</span><span class="hm-d">One to one, built around your goal</span><img src="images/classes/personal-training.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+      <li class="sf-rv"><a href="padel.html"><span class="hm-n">06</span><span class="hm-t">Padel</span><span class="hm-d">Three covered courts, every day</span><img src="images/classes/padel-class.webp" alt="" width="1440" height="1440" loading="lazy"></a></li>
+    </ol>
   </div>
 </section>
 
@@ -477,33 +436,38 @@
   </div>
 </section>
 
-<!-- GALLERY PREVIEW -->
-<section class="gallery-preview">
-  <div class="section-header reveal">
-    <div class="section-label">Inside Semper Fit</div>
-    <h2 class="section-title">Have a <span>Look Around</span></h2>
-    <div class="section-line"></div>
+<!-- GALLERY: two drifting rails -->
+<section class="hm-gallery">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">Inside Semper Fit</p>
+    <h2 class="pd-h2 sf-rv">Have a <span>look around.</span></h2>
   </div>
-  <div class="preview-grid">
-    <div class="preview-item tall reveal"><img src="images/gym/semper_fit_gymnasium_1769439366_3818656622176954989_58776857233.webp" alt="The Semper Fit gym floor" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/personal-training.webp" alt="A personal training session" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/semper_fit_gymnasium_1762158753_3757582431596374408_58776857233.webp" alt="A workout at Semper Fit" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/semper_fit_gymnasium_1758721654_3728749955033890928_58776857233.webp" alt="Training at Semper Fit" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/semper_fit_gymnasium_1773836743_3855544408117287083_58776857233.webp" alt="Members at Semper Fit" loading="lazy"></div>
-    <div class="preview-item tall reveal"><img src="images/gym/sf-padel.webp" alt="The padel courts" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/semper_fit_gymnasium_1770812862_3830178335628724370_58776857233.webp" alt="The training area" loading="lazy"></div>
-    <div class="preview-item reveal"><img src="images/gym/semper_fit_gymnasium_1759151079_3732352233812819768_58776857233.webp" alt="Members training together" loading="lazy"></div>
-  </div>
-  <div class="preview-cta reveal">
-    <a href="gallery.html" class="btn-primary">See all photos</a>
-  </div>
+  <div class="hm-rail"><div class="hm-track">
+    <img src="images/gym/semper_fit_gymnasium_1769439366_3818656622176954989_58776857233.webp" alt="The Semper Fit gym floor" loading="lazy">
+    <img src="images/gym/personal-training.webp" alt="A personal training session" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1762158753_3757582431596374408_58776857233.webp" alt="A workout at Semper Fit" loading="lazy">
+    <img src="images/gym/sf-padel.webp" alt="The padel courts" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1758721654_3728749955033890928_58776857233.webp" alt="Training at Semper Fit" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1769439366_3818656622176954989_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/personal-training.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1762158753_3757582431596374408_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/sf-padel.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1758721654_3728749955033890928_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+  </div></div>
+  <div class="hm-rail rev"><div class="hm-track">
+    <img src="images/gym/semper_fit_gymnasium_1773836743_3855544408117287083_58776857233.webp" alt="Members at Semper Fit" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1770812862_3830178335628724370_58776857233.webp" alt="The training area" loading="lazy">
+    <img src="images/gym/sf-padel3.jpg" alt="A player holding a padel racket" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1759151079_3732352233812819768_58776857233.webp" alt="Members training together" loading="lazy">
+    <img src="images/gym/community.webp" alt="The Semper Fit community" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1773836743_3855544408117287083_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1770812862_3830178335628724370_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/sf-padel3.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/semper_fit_gymnasium_1759151079_3732352233812819768_58776857233.webp" alt="" aria-hidden="true" loading="lazy">
+    <img src="images/gym/community.webp" alt="" aria-hidden="true" loading="lazy">
+  </div></div>
+  <div class="pd-wrap hm-gallery-cta"><a href="gallery.html" class="btn-primary">See all photos</a></div>
 </section>
-
-<!-- WORD BAND -->
-<div class="sf-band" aria-hidden="true">
-  <div class="sf-band-row"><div class="sf-band-track"><span>Strength</span><span>Padel</span><span>Boxing</span><span>Cardio</span><span>Leagues</span><span>Personal training</span><span>HIIT</span><span>Lessons</span><span>Strength</span><span>Padel</span><span>Boxing</span><span>Cardio</span><span>Leagues</span><span>Personal training</span><span>HIIT</span><span>Lessons</span></div></div>
-  <div class="sf-band-row rev"><div class="sf-band-track"><span>Karen</span><span>Three courts</span><span>Every day</span><span>Gym</span><span>Classes</span><span>Membership</span><span>Karen</span><span>Three courts</span><span>Every day</span><span>Gym</span><span>Classes</span><span>Membership</span></div></div>
-</div>
 
 <!-- FAQ -->
 <section class="sf-faq" id="faq">
@@ -539,12 +503,13 @@
 </section>
 
 <!-- CTA SECTION -->
-<section class="cta-section">
-  <h2>Ready to <span>Start?</span></h2>
-  <p>Book a court for this week, or message us about joining the gym.</p>
-  <div class="cta-btns">
-    <a href="book-padel.html" class="btn-light">Book a court</a>
-    <a href="contact.html" class="btn-outline-white">Join the gym</a>
+<section class="pd-cta">
+  <div class="pd-wrap pd-cta-inner">
+    <h2 class="pd-display pd-cta-h sf-rv"><span>Ready</span><span class="pd-accent">to start?</span></h2>
+    <div class="pd-ctas sf-rv">
+      <a href="book-padel.html" class="btn-primary">Book a court</a>
+      <a href="contact.html" class="pd-ghost pd-ghost-light">Join the gym</a>
+    </div>
   </div>
 </section>
 

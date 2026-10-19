@@ -2081,3 +2081,94 @@ html.js .sf-rv.from-top:not(.in) { transform: translateY(-26px); }
 .pd-ball-live { display: none; }
 #pdCourt.pd-live .pd-ball-live { display: inline; }
 #pdCourt.pd-live .pd-ball-rest { display: none; }
+
+/* =====================================================================
+   HOME PAGE (hm-*), October 2026. Shares the pd-* display system.
+   ===================================================================== */
+.hm-collage { position: relative; min-height: 520px; min-width: 0; }
+.hm-collage figure { position: absolute; margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 28px 60px rgba(0,0,0,.18); }
+.hm-collage img { width: 100%; height: 100%; object-fit: cover; }
+.hm-c1 { top: 0; right: 0; width: 82%; aspect-ratio: 3/2; }
+.hm-c2 { left: 0; bottom: 0; width: 52%; aspect-ratio: 1/1; border: 6px solid var(--black); }
+.hm-badge { position: absolute; right: 6%; bottom: 8%; background: var(--crimson); color: #fff; border-radius: 14px; padding: 12px 16px;
+  font-size: .78rem; line-height: 1.35; max-width: 210px; box-shadow: 0 14px 30px rgba(141,4,34,.35); }
+.hm-badge b { display: block; font: 400 1.35rem/1 'Anton', sans-serif; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 4px; }
+
+.hm-halves { padding: 100px 60px; background: var(--dark); }
+.hm-halves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; }
+.hm-half { position: relative; display: block; border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; min-width: 0; isolation: isolate; color: #fff; }
+.hm-half img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1s ease; }
+.hm-half::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.78)); }
+.hm-half:hover img { transform: scale(1.06); }
+.hm-half-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px; }
+.hm-half-body .pd-display { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 10px; color: #fff; }
+.hm-half-body p { opacity: .9; line-height: 1.6; max-width: 420px; margin-bottom: 14px; }
+.hm-arrow { display: inline-block; font-weight: 800; color: var(--amber); transition: transform .3s; }
+.hm-half:hover .hm-arrow { transform: translateX(6px); }
+
+.hm-statement { padding: 110px 60px 40px; }
+.hm-big { font: 400 clamp(2.6rem, 7.5vw, 6.4rem)/.95 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .5px; max-width: 1000px; margin-bottom: 24px; }
+.hm-big span { color: var(--crimson); }
+
+.hm-list { padding: 60px 60px 100px; }
+.hm-rows { list-style: none; margin-top: 26px; border-top: 1px solid var(--border); counter-reset: none; }
+.hm-rows li { border-bottom: 1px solid var(--border); }
+.hm-rows a { position: relative; display: grid; grid-template-columns: 70px 1fr 1fr; align-items: center; gap: 18px; padding: 22px 6px; transition: padding .35s ease, background .35s ease; }
+.hm-n { font: 400 1.1rem 'Anton', sans-serif; color: var(--crimson); letter-spacing: 1px; }
+.hm-t { font: 400 clamp(1.8rem, 4vw, 3.2rem)/1 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+.hm-d { color: var(--gray); font-size: .95rem; }
+.hm-rows img { position: absolute; right: 8%; top: 50%; width: 200px; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; pointer-events: none;
+  opacity: 0; transform: translateY(-50%) rotate(-4deg) scale(.85); transition: opacity .35s ease, transform .45s cubic-bezier(.2,.7,.2,1); box-shadow: 0 18px 40px rgba(0,0,0,.2); }
+@media (hover: hover) {
+  .hm-rows a:hover { padding-left: 22px; background: var(--dark); }
+  .hm-rows a:hover img { opacity: 1; transform: translateY(-50%) rotate(-4deg) scale(1); }
+  .hm-rows a:hover .hm-t { color: var(--crimson); }
+}
+
+.hm-gallery { padding: 100px 0; background: var(--dark); overflow: hidden; }
+.hm-gallery .pd-wrap { padding: 0 60px; }
+.hm-rail { overflow: hidden; margin-top: 18px; }
+.hm-track { display: flex; gap: 16px; width: max-content; animation: sfDrift 60s linear infinite; }
+.hm-rail.rev .hm-track { animation-direction: reverse; animation-duration: 70s; }
+.hm-track img { height: 260px; width: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; }
+.hm-rail:hover .hm-track { animation-play-state: paused; }
+.hm-gallery-cta { margin-top: 34px; text-align: center; }
+
+@media (max-width: 900px) {
+  .hm-collage { min-height: 0; height: 92vw; max-height: 520px; }
+}
+@media (max-width: 768px) {
+  .hm-halves, .hm-statement, .hm-list { padding-left: 16px; padding-right: 16px; }
+  .hm-halves { padding-top: 64px; padding-bottom: 64px; }
+  .hm-statement { padding-top: 70px; }
+  .hm-list { padding-bottom: 64px; }
+  .hm-gallery { padding: 64px 0; }
+  .hm-gallery .pd-wrap { padding: 0 16px; }
+  .hm-halves-grid { grid-template-columns: 1fr; }
+  .hm-half { aspect-ratio: 4/4.4; }
+  /* Phone: the photo is part of the row, always visible (there is no hover) */
+  .hm-rows a { grid-template-columns: 1fr 96px; grid-template-areas: "n img" "t img" "d img"; gap: 2px 14px; padding: 16px 0; }
+  .hm-n { grid-area: n; } .hm-t { grid-area: t; } .hm-d { grid-area: d; font-size: .85rem; }
+  .hm-rows img { grid-area: img; position: static; width: 96px; opacity: 1; transform: none; box-shadow: none; }
+  .hm-track img { height: 180px; }
+}
+@media (prefers-reduced-motion: reduce) { .hm-track { animation: none; } }
+
+/* Home hero: two short lines, sized so the buttons stay above the fold */
+.hm-hero .pd-display { font-size: clamp(3.4rem, 7.4vw, 7.2rem); }
+.hm-hero { padding-top: 140px; }
+.hm-hero .hm-collage { min-height: 470px; }
+@media (max-width: 900px) { .hm-hero .hm-collage { min-height: 0; } }
+@media (max-height: 820px) and (min-width: 901px) { .hm-hero .pd-display { font-size: clamp(3.2rem, 6.4vw, 6rem); } }
+
+/* One heading voice across the site: every section heading in the condensed face */
+.section-title, .section-header h2, .sf-split-text h2, .cta-section h2 {
+  font-family: 'Anton', 'Montserrat', sans-serif !important; font-weight: 400 !important;
+  text-transform: uppercase; letter-spacing: .5px; line-height: .98; }
+.section-title, .section-header h2 { font-size: clamp(2.2rem, 5.4vw, 3.8rem) !important; }
+.section-title span, .section-header h2 span, .sf-split-text h2 span { color: var(--crimson) !important; }
+
+/* Desktop menu bar is ~160px tall: heroes start below it */
+@media (min-width: 769px) { .pd-hero, .hm-hero { padding-top: 186px; } }
+
+@media (max-height: 820px) and (min-width: 901px) { .pd-hero:not(.hm-hero) .pd-display { font-size: clamp(3.4rem, 7.6vw, 7rem); } }
