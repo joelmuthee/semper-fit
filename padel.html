@@ -124,18 +124,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://semperpadel.essenceautomations.com">
 <link rel="preload" as="image" href="images/classes/padel-class.webp">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>document.documentElement.className+=' js';var t='light';try{t=localStorage.getItem('sf-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t);</script>
-<link rel="stylesheet" href="styles.css?v=3">
-<script src="site.js?v=2" defer></script>
+<link rel="stylesheet" href="styles.css?v=4">
+<script src="site.js?v=3" defer></script>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar" id="navbar">
+<nav class="navbar solid" id="navbar">
   <a href="index.html" class="nav-logo">
     <img src="images/logo.jpg" alt="Semper Fit Gymnasium logo" width="90" height="90">
   </a>
@@ -186,264 +186,151 @@
 </div>
 
 <!-- PADEL HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <img src="images/classes/padel-class.webp" alt="The covered, glass-walled padel courts at Semper Fit" fetchpriority="high" width="1440" height="1440">
-  </div>
-  <div class="hero-overlay" style="background:linear-gradient(135deg,rgba(10,10,10,0.88) 0%,rgba(141,4,34,0.35) 55%,rgba(10,10,10,0.75) 100%)"></div>
-  <div class="hero-content" style="text-align:center; margin-left:auto; margin-right:auto;">
-    <div class="hero-badge">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-      Padel &middot; SCIS, Karen
-    </div>
-    <h1>Padel Courts<br><span>in Karen.</span></h1>
-    <div class="hero-facts">
-      <div class="hero-fact hero-fact--highlight">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M12 3v18M2 12h20"/></svg>
-        <span><strong>3 Covered Courts</strong></span>
-      </div>
-      <div class="hero-fact-sep"></div>
-      <div class="hero-fact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <span>Every Day</span>
-      </div>
-      <div class="hero-fact-sep"></div>
-      <div class="hero-fact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span>6am-9pm</span>
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-hero-copy">
+      <p class="pd-kicker sf-rv">Padel &middot; St. Christopher's, Karen</p>
+      <h1 class="pd-display sf-rv"><span>Padel</span><span class="pd-accent">in Karen.</span></h1>
+      <ul class="pd-facts sf-rv">
+        <li><b>3</b> covered courts</li>
+        <li><b>6am-9pm</b> every day</li>
+        <li><b>Ksh 3,000</b> for 60 minutes</li>
+      </ul>
+      <p class="pd-lead sf-rv">Three glass-walled courts under a roof at St. Christopher's International School. Book 60 or 90 minutes, take a lesson, or play in a league.</p>
+      <div class="pd-ctas sf-rv">
+        <a href="#book-court" class="btn-primary">Book a court</a>
+        <a href="#how" class="pd-ghost">New to padel?</a>
       </div>
     </div>
-    <p>Three glass-walled, covered courts at St. Christopher's International School. Book 60 or 90 minutes, take lessons with a coach, or play in a league.</p>
-    <div class="hero-btns">
-      <a href="#book-court" class="btn-primary">Book a Court</a>
-      <a href="#why-padel" class="btn-secondary">New to padel?</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="14" height="18" rx="7"/><path d="M8 5v4"/></svg>
-    Scroll
+    <figure class="pd-hero-photo sf-rv">
+      <img src="images/classes/padel-class.webp" alt="The covered, glass-walled padel courts at Semper Fit" width="1440" height="1440" fetchpriority="high">
+      <figcaption class="pd-chip">
+        <svg viewBox="0 0 60 30" aria-hidden="true"><rect x="1" y="1" width="58" height="28" rx="2"/><line x1="30" y1="1" x2="30" y2="29"/><line x1="10" y1="1" x2="10" y2="29"/><line x1="50" y1="1" x2="50" y2="29"/><line x1="10" y1="15" x2="50" y2="15"/></svg>
+        <span><b>Glass walls, roof overhead</b>Rain does not stop the game</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- WHY PADEL -->
-<section class="padel-page" id="why-padel">
-  <div class="padel-watermark">PADEL</div>
-  <div class="padel-page-inner">
+<!-- TICKER -->
+<div class="sf-band pd-band" aria-hidden="true">
+  <div class="sf-band-row"><div class="sf-band-track"><span>60 or 90 minutes</span><span>Three covered courts</span><span>Lessons</span><span>Leagues</span><span>Gate 3a</span><span>Every day</span><span>60 or 90 minutes</span><span>Three covered courts</span><span>Lessons</span><span>Leagues</span><span>Gate 3a</span><span>Every day</span></div></div>
+</div>
 
-    <div class="padel-intro reveal">
-      <div class="padel-intro-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        New to Padel?
-      </div>
-      <h2>Why <span>Padel?</span></h2>
-      <p class="padel-intro-sub">Padel is a racket sport played in pairs on a small court with glass walls. The ball can come back off the walls, so rallies last longer than in tennis and most people pick it up quickly.</p>
+<!-- HOW A GAME WORKS (signature motion) -->
+<section class="pd-how" id="how">
+  <div class="pd-how-inner">
+    <div class="pd-how-copy">
+      <p class="pd-kicker sf-rv">New to padel?</p>
+      <h2 class="pd-h2 sf-rv">The walls are <span>part of the game.</span></h2>
+      <p class="pd-body sf-rv">Padel is played in pairs on a court about a third the size of a tennis court, with glass walls at each end. The ball can come back off the glass, so rallies keep going and beginners are playing proper points quickly.</p>
+      <ol class="pd-steps">
+        <li class="sf-rv"><b>1</b><span><strong>Serve underarm</strong> after a bounce, across into the far box.</span></li>
+        <li class="sf-rv"><b>2</b><span><strong>One bounce</strong> on the floor, then the ball may come off the glass.</span></li>
+        <li class="sf-rv"><b>3</b><span><strong>Play it back</strong> over the net, off the glass behind you if you need to.</span></li>
+      </ol>
     </div>
+    <figure class="pd-court sf-rv" aria-label="Illustration of a padel rally seen from above">
+      <svg viewBox="0 0 400 220" id="pdCourt">
+        <defs>
+          <linearGradient id="pdTurf" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3f74c0"/><stop offset="1" stop-color="#2f5fa6"/></linearGradient>
+        </defs>
+        <rect x="10" y="10" width="380" height="200" rx="6" fill="#e9eef6"/>
+        <rect x="20" y="20" width="360" height="180" fill="url(#pdTurf)"/>
+        <!-- glass: full back walls, partial side walls -->
+        <g class="pd-glass">
+          <line x1="20" y1="20" x2="20" y2="200"/><line x1="380" y1="20" x2="380" y2="200"/>
+          <line x1="20" y1="20" x2="92" y2="20"/><line x1="20" y1="200" x2="92" y2="200"/>
+          <line x1="308" y1="20" x2="380" y2="20"/><line x1="308" y1="200" x2="380" y2="200"/>
+        </g>
+        <g class="pd-mesh"><line x1="92" y1="20" x2="308" y2="20"/><line x1="92" y1="200" x2="308" y2="200"/></g>
+        <g class="pd-lines">
+          <line x1="75" y1="20" x2="75" y2="200"/><line x1="325" y1="20" x2="325" y2="200"/>
+          <line x1="75" y1="110" x2="325" y2="110"/>
+        </g>
+        <line class="pd-net" x1="200" y1="14" x2="200" y2="206"/>
+        <!-- players -->
+        <g class="pd-pl a"><circle cx="110" cy="62" r="9"/><circle cx="110" cy="158" r="9"/></g>
+        <g class="pd-pl b"><circle cx="292" cy="62" r="9"/><circle cx="292" cy="158" r="9"/></g>
+        <!-- bounce marks -->
+        <circle class="pd-mark" cx="268" cy="60" r="7"/>
+        <circle class="pd-mark" cx="372" cy="48" r="7"/>
+        <circle class="pd-mark" cx="134" cy="150" r="7"/>
+        <!-- the ball: rests on its last point; the rally only plays once JS starts it -->
+        <circle class="pd-ball pd-ball-rest" r="7" cx="118" cy="156"/>
+        <circle class="pd-ball pd-ball-live" r="7" cx="0" cy="0">
+          <animateMotion id="pdRally" dur="5.2s" begin="indefinite" repeatCount="indefinite" fill="freeze"
+            keyPoints="0;0.22;0.42;0.62;0.82;1" keyTimes="0;0.2;0.4;0.62;0.84;1" calcMode="linear"
+            path="M110,150 L268,60 L372,48 L292,66 L134,150 L118,156"/>
+        </circle>
+      </svg>
+      <figcaption>Illustration of a rally, seen from above. Glass in light blue.</figcaption>
+    </figure>
+  </div>
+</section>
 
-    <!-- 3 Courts graphic -->
-    <div class="courts-trio courts-trio--lg reveal">
-      <div class="courts-trio-header">
-        <span class="courts-num">3</span>
-        <div>
-          <strong>Padel Courts at SCIS, Karen</strong>
-          <em>Glass-walled &middot; Covered &middot; Open every day</em>
-        </div>
-      </div>
-      <div class="courts-trio-grid">
-        <div class="court-tile">
-          <svg viewBox="0 0 46 90" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="44" height="88" rx="2" stroke-width="2"/><line x1="1" y1="45" x2="45" y2="45" stroke-width="2.5"/><line x1="1" y1="32" x2="45" y2="32"/><line x1="1" y1="58" x2="45" y2="58"/><line x1="23" y1="32" x2="23" y2="58"/></svg>
-          <span>Court 1</span>
-        </div>
-        <div class="court-tile courts-active">
-          <svg viewBox="0 0 46 90" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="44" height="88" rx="2" stroke-width="2"/><line x1="1" y1="45" x2="45" y2="45" stroke-width="2.5"/><line x1="1" y1="32" x2="45" y2="32"/><line x1="1" y1="58" x2="45" y2="58"/><line x1="23" y1="32" x2="23" y2="58"/></svg>
-          <span>Court 2</span>
-        </div>
-        <div class="court-tile">
-          <svg viewBox="0 0 46 90" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="44" height="88" rx="2" stroke-width="2"/><line x1="1" y1="45" x2="45" y2="45" stroke-width="2.5"/><line x1="1" y1="32" x2="45" y2="32"/><line x1="1" y1="58" x2="45" y2="58"/><line x1="23" y1="32" x2="23" y2="58"/></svg>
-          <span>Court 3</span>
-        </div>
-      </div>
+<!-- COURT HIRE -->
+<section class="pd-hire" id="hire">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">Court hire</p>
+    <h2 class="pd-h2 sf-rv">Book the <span>whole court.</span></h2>
+    <div class="pd-tiles">
+      <article class="pd-tile sf-rv">
+        <div class="pd-tile-court" aria-hidden="true"></div>
+        <p class="pd-tile-len"><b>60</b> minutes</p>
+        <p class="pd-tile-price">Ksh 3,000</p>
+        <p class="pd-tile-note">The whole court, up to four players. Rackets and balls can be hired.</p>
+        <a href="#book-court" class="padel-price-cta pd-tile-btn" data-session="60">Book 60 minutes</a>
+      </article>
+      <article class="pd-tile pd-tile-hot sf-rv">
+        <div class="pd-tile-court" aria-hidden="true"></div>
+        <span class="pd-tag">Better rate</span>
+        <p class="pd-tile-len"><b>90</b> minutes</p>
+        <p class="pd-tile-price">Ksh 4,000</p>
+        <p class="pd-tile-note">An hour and a half on court, for longer games.</p>
+        <a href="#book-court" class="padel-price-cta pd-tile-btn" data-session="90">Book 90 minutes</a>
+      </article>
     </div>
+    <ul class="pd-info sf-rv">
+      <li><span>Pay by M-Pesa</span><b>Paybill 4122613, account Padel</b></li>
+      <li><span>Way in</span><b>Gate 3a, St. Christopher's</b></li>
+      <li><span>Open</span><b>Every day, 6am-9pm</b></li>
+      <li><span>Call</span><b><a href="tel:+254720720444">0720 720 444</a></b></li>
+    </ul>
+  </div>
+</section>
 
-    <!-- Why padel split -->
-    <div class="padel-split" id="why-padel-split">
-      <div class="padel-split-visual reveal-left">
-        <div class="padel-split-img-stack">
-          <img class="padel-img-top" src="images/classes/padel-class.webp" alt="Two of the three padel courts at Semper Fit" loading="lazy" width="1440" height="1440">
-          <img class="padel-img-bottom" src="images/classes/padel2.webp" alt="A padel racket and ball on the court" loading="lazy" width="1440" height="960">
-        </div>
-        <div class="padel-court-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M12 3v18M2 12h20"/></svg>
-          <div>
-            <strong>3 Courts</strong>
-            <span>Open every day</span>
-          </div>
-        </div>
+<!-- LESSONS + LEAGUES -->
+<section class="pd-more">
+  <div class="pd-wrap pd-more-grid">
+    <article class="pd-card sf-rv" id="coaching">
+      <div class="pd-card-img"><img src="images/gym/sf-padel3.jpg" alt="A player holding a padel racket at Semper Fit" width="4032" height="2268" loading="lazy"></div>
+      <div class="pd-card-body">
+        <p class="pd-kicker">Coaching</p>
+        <h3>Lessons with a coach</h3>
+        <p>One to one or in a small group. For complete beginners, and for players who want to sharpen up.</p>
+        <a class="pd-link" href="https://wa.me/254742822357?text=Hello%20Semper%20Fit%2C%20I%27d%20like%20to%20ask%20about%20padel%20lessons." target="_blank" rel="noopener">Ask about lessons &rarr;</a>
       </div>
-      <div class="padel-split-content reveal-right">
-        <div class="section-tag">Why Play</div>
-        <h3>Easy to Start.<br>Hard to <span>Put Down.</span></h3>
-        <div class="padel-stats-row">
-          <div class="padel-stat">
-            <div class="padel-stat-num">3</div>
-            <div class="padel-stat-label">Covered courts</div>
-          </div>
-          <div class="padel-stat">
-            <div class="padel-stat-num">60/90</div>
-            <div class="padel-stat-label">Minute sessions</div>
-          </div>
-          <div class="padel-stat">
-            <div class="padel-stat-num">7</div>
-            <div class="padel-stat-label">Days a week</div>
-          </div>
-        </div>
-        <ul class="padel-reasons">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Easy to pick up, even if you have never played a racket sport
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            A proper workout that feels like a game
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Always played in pairs, so it is social
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Good for all ages and fitness levels
-          </li>
-        </ul>
-        <a href="#book-court" class="btn-primary">Book a court</a>
+    </article>
+    <article class="pd-card sf-rv" id="leagues">
+      <div class="pd-card-img"><img src="images/classes/padel2.webp" alt="A padel racket and ball on the court" width="1440" height="960" loading="lazy"></div>
+      <div class="pd-card-body">
+        <p class="pd-kicker">Leagues and events</p>
+        <h3>Play for something</h3>
+        <p>Club leagues and tournaments, plus private and company events on the courts.</p>
+        <a class="pd-link" href="https://wa.me/254742822357?text=Hello%20Semper%20Fit%2C%20I%27d%20like%20to%20ask%20about%20padel%20leagues%20and%20events." target="_blank" rel="noopener">Ask about leagues &rarr;</a>
       </div>
-    </div>
+    </article>
+  </div>
+</section>
 
-    <!-- 4 Feature cards -->
-    <div class="padel-features-grid">
-      <div class="padel-feature reveal">
-        <div class="padel-feature-num">01</div>
-        <div class="padel-feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M12 3v18M2 12h20"/></svg>
-        </div>
-        <h3>Padel Courts</h3>
-        <p>Three glass-walled courts under a roof, so a shower does not stop the game. Rackets and balls can be hired at the courts.</p>
-      </div>
-      <div class="padel-feature reveal" id="coaching">
-        <div class="padel-feature-num">02</div>
-        <div class="padel-feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Coaching</h3>
-        <p>Lessons with a padel coach, one to one or in a small group. For complete beginners and for players who want to sharpen up.</p>
-      </div>
-      <div class="padel-feature reveal">
-        <div class="padel-feature-num">03</div>
-        <div class="padel-feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
-        <h3>Court Hire</h3>
-        <p>Book 60 or 90 minutes online, any day from 6am to 9pm, for you and up to three friends.</p>
-      </div>
-      <div class="padel-feature reveal" id="leagues">
-        <div class="padel-feature-num">04</div>
-        <div class="padel-feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
-        </div>
-        <h3>Leagues and Events</h3>
-        <p>Club leagues and tournaments, plus private and company events on the courts. Message us to join the next league or plan an event.</p>
-      </div>
-    </div>
-
-    <!-- Pricing cards -->
-    <div class="padel-pricing-block reveal">
-      <div class="section-tag">Court Hire</div>
-      <h3>Pick Your <span>Session</span></h3>
-      <div class="padel-pricing-cards">
-        <div class="padel-price-card padel-price-featured">
-          <div class="price-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h4>60 Min Court Hire</h4>
-          <div class="padel-price-amount">Ksh 3,000</div>
-          <p>One hour on court for up to four players. Rackets and balls can be hired.</p>
-          <a href="#book-court" class="padel-price-cta" data-session="60">Book 60 minutes</a>
-        </div>
-        <div class="padel-price-card padel-price-featured" style="border-color: var(--amber);">
-          <div class="price-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h4>90 Min Court Hire</h4>
-          <div class="padel-price-amount" style="color: var(--amber);">Ksh 4,000</div>
-          <p>An hour and a half on court. The better rate per minute, and good for longer games.</p>
-          <a href="#book-court" class="padel-price-cta" data-session="90" style="background:var(--amber);">Book 90 minutes</a>
-        </div>
-        <div class="padel-price-card">
-          <div class="price-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <h4>Lessons</h4>
-          <p>One to one or small group lessons with a padel coach. A good first step if you have never played.</p>
-          <a href="https://wa.me/254742822357?text=Hello%20Semper%20Fit%2C%20I%27d%20like%20to%20ask%20about%20padel%20lessons." class="padel-price-cta" target="_blank" rel="noopener">Ask about lessons</a>
-        </div>
-        <div class="padel-price-card">
-          <div class="price-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
-          </div>
-          <h4>Leagues and Events</h4>
-          <p>Play in a club league, or book the courts for a company or private tournament.</p>
-          <a href="https://wa.me/254742822357?text=Hello%20Semper%20Fit%2C%20I%27d%20like%20to%20ask%20about%20padel%20leagues%20and%20events." class="padel-price-cta" target="_blank" rel="noopener">Ask about leagues</a>
-        </div>
-      </div>
-
-      <!-- M-Pesa payment + access info -->
-      <div class="padel-mpesa-block">
-        <div class="padel-mpesa-card">
-          <div class="padel-mpesa-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-          </div>
-          <div>
-            <h5>Pay by M-Pesa</h5>
-            <p>Paybill <strong>4122613</strong>, Account: <strong>Padel</strong></p>
-          </div>
-        </div>
-        <div class="padel-mpesa-card">
-          <div class="padel-mpesa-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.4 11.5 7.7 11.8a.5.5 0 0 0 .6 0C12.6 21.5 20 15.4 20 10a8 8 0 0 0-8-8z"/></svg>
-          </div>
-          <div>
-            <h5>Access</h5>
-            <p>Enter via <strong>Gate 3a</strong></p>
-          </div>
-        </div>
-        <div class="padel-mpesa-card">
-          <div class="padel-mpesa-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <div>
-            <h5>Opening Hours</h5>
-            <p>Every day: <strong>6am-9pm</strong></p>
-          </div>
-        </div>
-        <div class="padel-mpesa-card">
-          <div class="padel-mpesa-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div>
-            <h5>Bookings</h5>
-            <p><a href="tel:+254720720444" style="color:var(--amber);">0720 720 444</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BOOKING CALENDARS -->
-    <div class="padel-booking-block reveal" id="book-court">
-      <div class="section-tag">Online Booking</div>
-      <h3>Book Your <span>Court</span></h3>
-      <p class="padel-booking-sub">Choose 60 or 90 minutes, then pick a time that suits you.</p>
-      <!-- Our own booking app. The session tabs and the M-Pesa deposit notice used to
-           live out here because the old calendar couldn't do either; both are inside the
-           app now, so duplicating them would just contradict it. -->
+<!-- BOOKING -->
+<section class="pd-book">
+  <div class="pd-wrap">
+    <div class="padel-booking-block" id="book-court">
+      <p class="pd-kicker sf-rv">Online booking</p>
+      <h2 class="pd-h2 sf-rv">Pick a <span>time.</span></h2>
+      <p class="pd-body sf-rv">Choose 60 or 90 minutes, then a time. A free court is given to you.</p>
       <div class="padel-calendar-wrap">
         <div class="cal-loader" id="bookingLoader">
           <div class="cal-spinner"></div>
@@ -457,62 +344,42 @@
                 onload="document.getElementById('bookingLoader').style.display='none'"></iframe>
       </div>
     </div>
-
-  </div><!-- end padel-page-inner -->
-</section>
-
-<!-- GALLERY STRIP -->
-<section class="padel-gallery-strip">
-  <div class="section-header reveal" style="padding: 0 16px 40px;">
-    <div class="section-tag">On Court</div>
-    <h2>See Our <span>Courts</span></h2>
-  </div>
-  <div class="padel-gallery-grid">
-    <div class="padel-gallery-item">
-      <img src="images/gym/sf-padel.webp" alt="The padel courts at Semper Fit under their roof" loading="lazy" width="1440" height="1440">
-    </div>
-    <div class="padel-gallery-item">
-      <img src="images/classes/padel2.webp" alt="A padel racket and ball at Semper Fit" loading="lazy" width="1440" height="960">
-    </div>
-    <div class="padel-gallery-item">
-      <img src="images/gym/sf-padel3.jpg" alt="A player holding a padel racket at Semper Fit" loading="lazy" width="4032" height="2268">
-    </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="sf-faq" id="faq">
   <div class="sf-faq-inner">
-    <div class="section-header reveal">
+    <div class="section-header sf-rv">
       <div class="section-tag">Questions</div>
       <h2>Padel <span>Questions</span></h2>
     </div>
-    <div class="sf-faq-list">
-      <div class="sf-faq-item reveal">
+    <div class="sf-faq-list pd-faq-grid">
+      <div class="sf-faq-item sf-rv">
         <h3>How much does it cost to hire a padel court at Semper Fit?</h3>
         <p>Ksh 3,000 for 60 minutes or Ksh 4,000 for 90 minutes, for the whole court. Up to four people play on one court.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>When are the padel courts open?</h3>
         <p>Every day from 6am to 9pm.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>Where are the courts?</h3>
         <p>At St. Christopher's International School in Karen, Nairobi. Come in through Gate 3a.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>How do I book a court?</h3>
         <p>Book online on this page, or call 0720 720 444.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>How do I pay?</h3>
         <p>By M-Pesa to Paybill 4122613, account Padel.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>I have never played. Can I still come?</h3>
         <p>Yes. Book a lesson with a coach, or bring friends and hire rackets and balls at the courts.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>Are the courts covered?</h3>
         <p>Yes. All three courts are under a roof, with glass walls.</p>
       </div>
@@ -521,18 +388,12 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-text reveal">
-      <h2>Ready to <span>Play?</span></h2>
-      <p>Book a court, ask about lessons, or join the next league.</p>
-      <div class="cta-btns">
-        <a href="#book-court" class="btn-primary">Book a court</a>
-        <a href="classes.html" class="btn-ghost">See the gym</a>
-      </div>
-    </div>
-    <div class="cta-image reveal-right">
-      <img src="images/classes/padel2.webp" alt="A padel racket and ball at Semper Fit" loading="lazy" width="1440" height="960">
+<section class="pd-cta">
+  <div class="pd-wrap pd-cta-inner">
+    <h2 class="pd-display pd-cta-h sf-rv"><span>See you</span><span class="pd-accent">on court.</span></h2>
+    <div class="pd-ctas sf-rv">
+      <a href="#book-court" class="btn-primary">Book a court</a>
+      <a href="classes.html" class="pd-ghost pd-ghost-light">See the gym</a>
     </div>
   </div>
 </section>
@@ -584,7 +445,7 @@
   <p class="footer-draft">Draft site for review. Opening hours, prices and the class timetable are still to be confirmed.</p>
   <div class="footer-bottom">
     <span>&copy; 2026 Semper Fit Gymnasium, St. Christopher's International School.</span>
-    <span>Powered by <a href="https://essenceautomations.com/websites" target="_blank" rel="noopener">Essence Automations</a></span>
+    <span>Designed by <a href="https://essenceautomations.com/websites" target="_blank" rel="noopener">Essence Automations</a></span>
   </div>
 </footer>
 

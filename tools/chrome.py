@@ -113,7 +113,7 @@ FOOTER = '''<footer class="footer">
   <p class="footer-draft">Draft site for review. Opening hours, prices and the class timetable are still to be confirmed.</p>
   <div class="footer-bottom">
     <span>&copy; 2026 Semper Fit Gymnasium, St. Christopher's International School.</span>
-    <span>Powered by <a href="https://essenceautomations.com/websites" target="_blank" rel="noopener">Essence Automations</a></span>
+    <span>Designed by <a href="https://essenceautomations.com/websites" target="_blank" rel="noopener">Essence Automations</a></span>
   </div>
 </footer>'''
 

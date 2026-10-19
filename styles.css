@@ -1939,3 +1939,145 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
 
 /* While the booking app has a pop-up open, the site's floating buttons step aside */
 body.sf-modal-open .whatsapp-widget, body.sf-modal-open button[aria-label="Back to top"] { display: none !important; }
+
+/* =====================================================================
+   PADEL PAGE (pd-*), October 2026 redesign.
+   Display face: Anton (condensed) for the big lines only; Montserrat/Inter elsewhere.
+   ===================================================================== */
+.pd-display, .pd-h2, .pd-tile-len b, .pd-tile-price { font-family: 'Anton', 'Montserrat', sans-serif; font-weight: 400; letter-spacing: .5px; }
+.pd-kicker { font: 700 .74rem/1.3 'Inter', sans-serif; letter-spacing: 2.2px; text-transform: uppercase; color: var(--crimson); margin-bottom: 14px; }
+.pd-wrap { max-width: 1160px; margin: 0 auto; }
+.pd-h2 { font-size: clamp(2.3rem, 6vw, 4.4rem); line-height: .98; text-transform: uppercase; margin-bottom: 20px; }
+.pd-h2 span { color: var(--crimson); }
+.pd-body { color: var(--gray); font-size: 1rem; line-height: 1.75; max-width: 560px; }
+.pd-accent { color: var(--crimson); }
+.pd-ghost { display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 8px; border: 2px solid currentColor; font-weight: 700; font-size: .88rem; text-transform: uppercase; letter-spacing: .5px; color: var(--white); transition: background .25s, color .25s; }
+.pd-ghost:hover { background: var(--white); color: var(--black); }
+.pd-ghost-light { color: #fff; }
+.pd-ghost-light:hover { background: #fff; color: #111; }
+.pd-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Bidirectional reveal: hidden only once JS is running and only until in view */
+html.js .sf-rv:not(.in) { opacity: 0; transform: translateY(26px); }
+.sf-rv { transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+html.js .sf-rv.from-top:not(.in) { transform: translateY(-26px); }
+
+/* Hero */
+.pd-hero { padding: 132px 60px 70px; background:
+  radial-gradient(1200px 500px at 85% -10%, rgba(245,166,35,.16), transparent 60%), var(--black); overflow: hidden; }
+.pd-hero-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.pd-hero-copy { min-width: 0; }
+.pd-display { font-size: clamp(4rem, 11.5vw, 10.5rem); line-height: .86; text-transform: uppercase; margin-bottom: 26px; }
+.pd-display span { display: block; }
+.pd-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 22px; }
+.pd-facts li { font-size: .92rem; color: var(--gray); padding-left: 14px; position: relative; }
+.pd-facts li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+.pd-facts b { color: var(--white); font-weight: 800; }
+.pd-lead { color: var(--gray); line-height: 1.75; max-width: 520px; margin-bottom: 28px; }
+.pd-hero-photo { position: relative; margin: 0; min-width: 0; }
+.pd-hero-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,.18); }
+.pd-chip { position: absolute; left: -24px; bottom: 28px; display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 12px 16px; box-shadow: 0 16px 34px rgba(0,0,0,.14); max-width: 280px; }
+.pd-chip svg { width: 52px; flex: none; fill: #3f74c0; stroke: #fff; stroke-width: 1.4; }
+.pd-chip span { font-size: .78rem; color: var(--gray); line-height: 1.4; }
+.pd-chip b { display: block; color: var(--white); font-size: .86rem; }
+
+/* Ticker */
+.pd-band { background: var(--crimson); }
+
+/* How a game works */
+.pd-how { padding: 100px 60px; }
+.pd-how-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+.pd-how-copy { min-width: 0; }
+.pd-steps { list-style: none; display: grid; gap: 12px; margin-top: 26px; }
+.pd-steps li { display: flex; gap: 14px; align-items: flex-start; font-size: .95rem; color: var(--gray); line-height: 1.55; }
+.pd-steps li b { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--crimson); color: #fff; display: grid; place-items: center; font-size: .82rem; }
+.pd-steps strong { color: var(--white); }
+.pd-court { margin: 0; min-width: 0; }
+.pd-court svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 24px 40px rgba(31,64,120,.22)); }
+.pd-court figcaption { font-size: .78rem; color: var(--gray); margin-top: 10px; text-align: center; }
+.pd-glass line { stroke: #bfe3ff; stroke-width: 6; stroke-linecap: round; }
+.pd-mesh line { stroke: #9aa7b8; stroke-width: 3; stroke-dasharray: 3 4; }
+.pd-lines line { stroke: rgba(255,255,255,.9); stroke-width: 2; }
+.pd-net { stroke: #fff; stroke-width: 4; stroke-dasharray: 2 2; }
+.pd-pl circle { stroke: #fff; stroke-width: 2.5; }
+.pd-pl.a circle { fill: var(--crimson); }
+.pd-pl.b circle { fill: #1d2a3a; }
+.pd-mark { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 1.5; stroke-dasharray: 2 2; }
+.pd-ball { fill: #e8f34a; stroke: #9aa300; stroke-width: 1; }
+
+/* Court hire */
+.pd-hire { padding: 100px 60px; background: var(--dark); }
+.pd-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 30px 0 26px; }
+.pd-tile { position: relative; overflow: hidden; border-radius: 18px; padding: 34px 30px 30px; background: #2f5fa6; color: #fff; min-width: 0; isolation: isolate; }
+.pd-tile-hot { background: var(--crimson); }
+.pd-tile-court { position: absolute; inset: 0; z-index: -1; opacity: .28;
+  background:
+    linear-gradient(#fff,#fff) 50% 0 / 2px 100% no-repeat,
+    linear-gradient(#fff,#fff) 0 50% / 100% 2px no-repeat,
+    linear-gradient(#fff,#fff) 22% 0 / 2px 100% no-repeat,
+    linear-gradient(#fff,#fff) 78% 0 / 2px 100% no-repeat; }
+.pd-tag { position: absolute; top: 20px; right: 20px; background: var(--amber); color: #111; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 6px 10px; border-radius: 999px; }
+.pd-tile-len { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+.pd-tile-len b { font-size: clamp(4.5rem, 10vw, 7rem); line-height: .9; display: block; letter-spacing: 1px; }
+.pd-tile-price { font-size: 2.2rem; margin: 10px 0 8px; }
+.pd-tile-note { opacity: .88; font-size: .93rem; line-height: 1.6; max-width: 340px; margin-bottom: 22px; }
+.pd-tile-btn.padel-price-cta { background: #fff !important; color: #111 !important; border: 0 !important; }
+.pd-tile-btn.padel-price-cta:hover { background: var(--amber) !important; }
+.pd-info { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.pd-info li { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+.pd-info span { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: 1.4px; color: var(--gray); margin-bottom: 4px; }
+.pd-info b { font-size: .92rem; overflow-wrap: anywhere; }
+.pd-info a { color: var(--crimson); }
+
+/* Lessons + leagues */
+.pd-more { padding: 100px 60px; }
+.pd-more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.pd-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; min-width: 0; display: flex; flex-direction: column; }
+.pd-card-img { aspect-ratio: 16/10; overflow: hidden; }
+.pd-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s ease; }
+.pd-card:hover .pd-card-img img { transform: scale(1.05); }
+.pd-card-body { padding: 26px 26px 30px; }
+.pd-card-body h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 10px; }
+.pd-card-body p:not(.pd-kicker) { color: var(--gray); line-height: 1.7; margin-bottom: 16px; }
+.pd-link { color: var(--crimson); font-weight: 700; }
+
+/* Booking */
+.pd-book { padding: 90px 60px; background: var(--dark); }
+.pd-book .padel-calendar-wrap { margin-top: 26px; }
+
+/* FAQ in two columns on wide screens */
+@media (min-width: 900px) { .pd-faq-grid { grid-template-columns: 1fr 1fr; max-width: 1100px; } }
+
+/* Closing CTA */
+.pd-cta { padding: 110px 60px; background: linear-gradient(135deg, #1b0d12, #5c0217 60%, var(--crimson)); color: #fff; }
+.pd-cta-inner { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 30px; }
+.pd-cta-h { margin: 0; color: #fff; font-size: clamp(3.4rem, 9vw, 8rem); }
+.pd-cta-h .pd-accent { color: var(--amber); }
+
+@media (max-width: 900px) {
+  .pd-hero-inner, .pd-how-inner { grid-template-columns: 1fr; gap: 40px; }
+  .pd-hero-photo img { aspect-ratio: 4/3; }
+  .pd-chip { left: 12px; bottom: 12px; }
+  .pd-info { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .pd-hero { padding: 108px 16px 56px; }
+  .pd-how, .pd-hire, .pd-more, .pd-book, .pd-cta { padding: 64px 16px; }
+  .pd-tiles, .pd-more-grid { grid-template-columns: 1fr; }
+  .pd-tile { padding: 28px 22px 24px; }
+}
+@media (max-width: 380px) { .pd-info { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .sf-rv { transition: none; }
+  html.js .sf-rv:not(.in) { opacity: 1; transform: none; }
+}
+
+/* Instagram icon is line art: stroke it, never fill it (a filled one renders as a blob) */
+.footer-social svg { width: 18px; height: 18px; fill: none !important; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.footer-social a { color: #c4c4c4; border-color: rgba(255,255,255,.18); }
+
+/* Resting ball shows until the rally starts; the moving one only while it runs */
+.pd-ball-live { display: none; }
+#pdCourt.pd-live .pd-ball-live { display: inline; }
+#pdCourt.pd-live .pd-ball-rest { display: none; }

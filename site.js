@@ -43,4 +43,47 @@
     var last = document.querySelector('.sf-bs[data-step="3"]');
     if (last) last.classList.add('is-on');
   }
+
+  /* Bidirectional reveal (.sf-rv): comes in when it enters the screen, from below on
+     the way down and from above on the way up, and resets once it has fully left.
+     Geometry on a passive scroll listener, no IntersectionObserver. */
+  var rv = [].slice.call(document.querySelectorAll('.sf-rv'));
+  if (rv.length) {
+    var lastY = window.scrollY;
+    var tick = function () {
+      var vh = window.innerHeight, down = window.scrollY >= lastY;
+      lastY = window.scrollY;
+      rv.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var inView = r.top < vh * 0.92 && r.bottom > vh * 0.06;
+        var gone = r.bottom < 0 || r.top > vh;
+        if (inView && !el.classList.contains('in')) { el.classList.toggle('from-top', !down); el.classList.add('in'); }
+        else if (gone && el.classList.contains('in')) el.classList.remove('in');
+      });
+    };
+    window.addEventListener('scroll', tick, { passive: true });
+    window.addEventListener('resize', tick);
+    tick();
+    // Anything still hidden after 3s (a frozen tab, a missed event) is shown anyway.
+    setTimeout(function () { rv.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+    }); }, 3000);
+  }
+
+  /* Padel rally: the SVG ball rests on its last point; the rally plays only while the
+     court is on screen and the tab is visible, never under reduced motion. */
+  var court = document.getElementById('pdCourt'), rally = document.getElementById('pdRally');
+  if (court && rally && !reduce && court.pauseAnimations) {
+    var started = false;
+    var check = function () {
+      var r = court.getBoundingClientRect();
+      var on = !document.hidden && r.bottom > 0 && r.top < window.innerHeight;
+      if (on && !started) { started = true; court.classList.add('pd-live'); rally.beginElement(); }
+      if (started) { if (on) court.unpauseAnimations(); else court.pauseAnimations(); }
+    };
+    window.addEventListener('scroll', check, { passive: true });
+    document.addEventListener('visibilitychange', check);
+    check();
+  }
 })();
