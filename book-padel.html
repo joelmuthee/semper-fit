@@ -64,7 +64,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>document.documentElement.className+=' js';var t='light';try{t=localStorage.getItem('sf-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t);</script>
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <script src="site.js?v=2" defer></script>
 </head>
 <body>
@@ -245,6 +245,32 @@ document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('clic
   }
   f.addEventListener('load', pushTheme);
   new MutationObserver(pushTheme).observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+
+  // The iframe is as tall as its content, so a pop-up pinned inside it would open
+  // wherever the frame's own viewport is, often far off screen. Tell the app which
+  // slice of it the visitor can see, and it opens its pop-ups there.
+  function pushView(){
+    if (!f.contentWindow) return;
+    // The fixed menu bar covers the top of the screen, so the visible slice starts under it.
+    var nav = document.getElementById('navbar');
+    var navB = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
+    var r = f.getBoundingClientRect(), vh = window.innerHeight;
+    var top = Math.max(0, navB - r.top), bottom = Math.min(r.height, vh - r.top);
+    f.contentWindow.postMessage({ sfBooking:'view', top: Math.round(top), height: Math.round(Math.max(0, bottom - top)) }, '*');
+  }
+  window.addEventListener('scroll', pushView, { passive:true });
+  window.addEventListener('resize', pushView);
+  f.addEventListener('load', pushView);
+  window.addEventListener('message', function(e){
+    if (!e.data || e.data.sfBooking !== 'modal') return;
+    // Floating buttons would sit on top of the pop-up's own buttons while it is open.
+    document.body.classList.toggle('sf-modal-open', e.data.open !== false);
+    if (e.data.open === false) return;
+    // Pop-up opening: if the frame is barely on screen, bring it into view first.
+    var r = f.getBoundingClientRect();
+    if (r.bottom < 120 || r.top > window.innerHeight - 120) f.scrollIntoView({ block:'center' });
+    pushView();
+  });
 })();
 </script>
 

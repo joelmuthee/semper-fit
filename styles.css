@@ -1936,3 +1936,6 @@ html:not(.js) .reveal, html:not(.js) .reveal-left, html:not(.js) .reveal-right {
 [data-theme="light"] .membership-featured .membership-cta, [data-theme="light"] .padel-price-featured .padel-price-cta { color: #111; background: var(--amber); border: none; }
 .footer .footer-contact li, .footer .footer-desc, .footer .footer-col ul a { color: #c4c4c4; }
 .footer .footer-draft, .footer .footer-bottom { color: #a8a8a8; }
+
+/* While the booking app has a pop-up open, the site's floating buttons step aside */
+body.sf-modal-open .whatsapp-widget, body.sf-modal-open button[aria-label="Back to top"] { display: none !important; }
