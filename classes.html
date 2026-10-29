@@ -143,8 +143,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>document.documentElement.className+=' js';var t='light';try{t=localStorage.getItem('sf-theme')||'light'}catch(e){}document.documentElement.setAttribute('data-theme',t);</script>
-<link rel="stylesheet" href="styles.css?v=6">
-<script src="site.js?v=3" defer></script>
+<link rel="stylesheet" href="styles.css?v=7">
+<script src="site.js?v=4" defer></script>
 </head>
 <body>
 
@@ -200,89 +200,60 @@
 </div>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg">
-    <img src="images/gym/gym_3.webp" alt="A member training on the chest press at Semper Fit gym" loading="eager" width="1440" height="1440">
-  </div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content" style="text-align:center; margin-left:auto; margin-right:auto;">
-    <div class="page-hero-badge">The Gym &middot; SCIS, Karen</div>
-    <h1>The Gym at <span>Semper Fit</span></h1>
-    <p>Weights, cardio, boxing, group classes and personal training at St. Christopher's International School, Karen.</p>
-    <div class="page-hero-anchors">
-      <a href="#classes" class="btn-ghost-sm">Classes</a>
-      <a href="#membership" class="btn-primary-sm">Membership</a>
-      <a href="#hours" class="btn-ghost-sm">Opening hours</a>
+<section class="pd-hero">
+  <div class="pd-hero-inner">
+    <div class="pd-hero-copy">
+      <p class="pd-kicker sf-rv">The gym &middot; St. Christopher's, Karen</p>
+      <h1 class="pd-display gy-display sf-rv"><span>The gym</span><span class="pd-accent">at Semper Fit.</span></h1>
+      <ul class="pd-facts sf-rv">
+        <li>From <b>Ksh 1,500</b> a day</li>
+        <li><b>Ksh 11,000</b> a term</li>
+        <li>Open from <b>5am</b> on weekdays</li>
+      </ul>
+      <p class="pd-lead sf-rv">Weights, cardio, boxing, group classes and personal training at St. Christopher's International School, Karen.</p>
+      <div class="pd-ctas sf-rv">
+        <a href="#membership" class="btn-primary">See membership</a>
+        <a href="#hours" class="pd-ghost">Opening hours</a>
+      </div>
     </div>
+    <figure class="pd-hero-photo sf-rv">
+      <img src="images/gym/gym_3.webp" alt="A member training on the chest press at Semper Fit gym" width="1440" height="1440" fetchpriority="high">
+      <figcaption class="pd-chip gy-open" id="gyChip">
+        <span class="gy-dot"></span>
+        <span><b id="gyChipT">Open early and late</b><span id="gyChipS">Mon-Fri 5-8am and 4-8pm</span></span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
+<!-- TICKER -->
+<div class="sf-band pd-band" aria-hidden="true">
+  <div class="sf-band-row"><div class="sf-band-track"><span>Strength</span><span>Cardio</span><span>Boxing</span><span>HIIT</span><span>Personal training</span><span>Membership</span><span>Strength</span><span>Cardio</span><span>Boxing</span><span>HIIT</span><span>Personal training</span><span>Membership</span></div></div>
+</div>
+
 <!-- GYM CLASSES -->
-<section class="classes-section" id="classes">
-  <div class="classes-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">Classes</div>
-      <h2>What You Can <span>Train Here</span></h2>
-      <p>Train on your own on the gym floor, or join a class with a coach.</p>
-    </div>
-    <div class="classes-grid">
-
-      <div class="class-card reveal">
-        <div class="class-card-img">
-          <img src="images/classes/strength-training.webp" alt="Strength training with free weights at Semper Fit" loading="lazy" width="1440" height="1440">
-          <div class="class-level level-all">All levels</div>
-        </div>
-        <div class="class-card-body">
-          <div class="class-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M2 8h4M18 8h4M2 16h4M18 16h4"/></svg>
-          </div>
-          <h3>Strength Training</h3>
-          <p>Free weights, barbells, racks and cable machines, for building strength at your own pace or with a coach.</p>
-        </div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="class-card-img">
-          <img src="images/classes/cardio-zone.webp" alt="Cardio machines at Semper Fit" loading="lazy" width="1440" height="1440">
-          <div class="class-level level-all">All levels</div>
-        </div>
-        <div class="class-card-body">
-          <div class="class-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Cardio</h3>
-          <p>Treadmills, bikes and rowers for steady fitness work, whenever the gym is open.</p>
-        </div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="class-card-img">
-          <img src="images/classes/boxing-combat.webp" alt="Boxing training at Semper Fit" loading="lazy" width="1440" height="1440">
-          <div class="class-level level-intermediate">Small groups</div>
-        </div>
-        <div class="class-card-body">
-          <div class="class-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 20H6v-9.5c0-.83.67-1.5 1.5-1.5h7c.83 0 1.5.67 1.5 1.5V20z"/><path d="M9.5 9V4.5a1.5 1.5 0 0 1 3 0V9"/><path d="M12.5 9V5.5a1.5 1.5 0 0 1 3 0V9"/></svg>
-          </div>
-          <h3>Boxing</h3>
-          <p>Bag work, pads and conditioning. A hard workout that is also a good way to clear your head.</p>
-        </div>
-      </div>
-
-      <div class="class-card reveal">
-        <div class="class-card-img">
-          <img src="images/classes/hiit-group.webp" alt="A group fitness class at Semper Fit" loading="lazy" width="1440" height="1440">
-          <div class="class-level level-advanced">Group class</div>
-        </div>
-        <div class="class-card-body">
-          <div class="class-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3>HIIT and Group Fitness</h3>
-          <p>Short, high-energy sessions in a group, with a coach keeping the pace up.</p>
-        </div>
-      </div>
-
+<section class="gy-classes" id="classes">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">Classes</p>
+    <h2 class="pd-h2 sf-rv">What you can <span>train here.</span></h2>
+    <p class="pd-body sf-rv">Train on your own on the gym floor, or join a class with a coach.</p>
+    <div class="gy-tiles">
+      <article class="gy-tile sf-rv">
+        <img src="images/classes/strength-training.webp" alt="Strength training with free weights at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div><span class="gy-tag">All levels</span><h3 class="pd-display">Strength</h3><p>Free weights, barbells, racks and cable machines, at your own pace or with a coach.</p></div>
+      </article>
+      <article class="gy-tile sf-rv">
+        <img src="images/classes/cardio-zone.webp" alt="Cardio machines at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div><span class="gy-tag">All levels</span><h3 class="pd-display">Cardio</h3><p>Treadmills, bikes and rowers, whenever the gym is open.</p></div>
+      </article>
+      <article class="gy-tile sf-rv">
+        <img src="images/classes/boxing-combat.webp" alt="Boxing training at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div><span class="gy-tag">Small groups</span><h3 class="pd-display">Boxing</h3><p>Bag work, pads and conditioning. A hard workout that clears your head.</p></div>
+      </article>
+      <article class="gy-tile sf-rv">
+        <img src="images/classes/hiit-group.webp" alt="A group fitness class at Semper Fit" width="1440" height="1440" loading="lazy">
+        <div><span class="gy-tag">Group class</span><h3 class="pd-display">HIIT</h3><p>Short, high-energy sessions in a group, with a coach keeping the pace up.</p></div>
+      </article>
     </div>
   </div>
 </section>
@@ -290,12 +261,12 @@
 <!-- PERSONAL TRAINING -->
 <section class="sf-split" id="personal-training">
   <div class="sf-split-inner">
-    <div class="sf-split-img reveal-left">
+    <div class="sf-split-img sf-rv">
       <img src="images/classes/personal-training.webp" alt="A Semper Fit trainer helping a member stretch" loading="lazy" width="1440" height="1440">
     </div>
-    <div class="sf-split-text reveal-right">
-      <div class="section-tag">Personal Training</div>
-      <h2>One Trainer. <span>Your Goal.</span></h2>
+    <div class="sf-split-text sf-rv">
+      <p class="pd-kicker">Personal training</p>
+      <h2>One trainer. <span>Your goal.</span></h2>
       <p>Work one to one with a Semper Fit trainer. They start from where you are today and build the sessions around your goal and your week.</p>
       <ul class="sf-ticks">
         <li>Sessions at times that suit you</li>
@@ -307,80 +278,58 @@
 </section>
 
 <!-- GYM MEMBERSHIP PRICING -->
-<section class="membership-section" id="membership">
-  <div class="membership-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">Membership</div>
-      <h2>Gym <span>Membership</span></h2>
-      <p>Pay for a school term, the whole school year, or just a day.</p>
+<section class="pd-hire" id="membership">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">Membership</p>
+    <h2 class="pd-h2 sf-rv">Pick how <span>you pay.</span></h2>
+    <div class="gy-prices">
+      <article class="pd-tile gy-term sf-rv">
+        <div class="pd-tile-court" aria-hidden="true"></div>
+        <p class="pd-tile-len"><b>1</b> term</p>
+        <p class="pd-tile-price">Ksh 11,000</p>
+        <p class="pd-tile-note">Full use of the gym for one school term.</p>
+        <a href="contact.html" class="padel-price-cta pd-tile-btn">Join for a term</a>
+      </article>
+      <article class="pd-tile pd-tile-hot sf-rv">
+        <div class="pd-tile-court" aria-hidden="true"></div>
+        <span class="pd-tag">Best value</span>
+        <p class="pd-tile-len"><b>3</b> terms</p>
+        <p class="pd-tile-price">Ksh 30,000</p>
+        <p class="pd-tile-note">The whole school year, Ksh 3,000 less than paying term by term. School holidays not included.</p>
+        <a href="contact.html" class="padel-price-cta pd-tile-btn">Join for the year</a>
+      </article>
+      <article class="pd-tile gy-day sf-rv">
+        <div class="pd-tile-court" aria-hidden="true"></div>
+        <p class="pd-tile-len"><b>1</b> day</p>
+        <p class="pd-tile-price">Ksh 1,500</p>
+        <p class="pd-tile-note">Train for a day with nothing to sign up for.</p>
+        <a href="contact.html" class="padel-price-cta pd-tile-btn">Ask about a day pass</a>
+      </article>
     </div>
-    <div class="membership-cards">
-      <div class="membership-card reveal">
-        <div class="membership-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        </div>
-        <h3>One Term</h3>
-        <div class="membership-price">Ksh 11,000</div>
-        <p>Full use of the gym for one school term.</p>
-        <a href="contact.html" class="membership-cta">Join for a term</a>
-      </div>
-      <div class="membership-card membership-featured reveal">
-        <div class="membership-badge">Best value</div>
-        <div class="membership-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
-        </div>
-        <h3>Three Terms</h3>
-        <div class="membership-price">Ksh 30,000</div>
-        <p class="membership-note">School holidays not included</p>
-        <p>The whole school year, for Ksh 3,000 less than paying term by term.</p>
-        <a href="contact.html" class="membership-cta">Join for the year</a>
-      </div>
-      <div class="membership-card reveal">
-        <div class="membership-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <h3>Day Pass</h3>
-        <div class="membership-price">Ksh 1,500<span class="membership-unit">/day</span></div>
-        <p>Train for a day with nothing to sign up for.</p>
-        <a href="contact.html" class="membership-cta">Ask about a day pass</a>
-      </div>
-    </div>
-    <div class="membership-mpesa reveal">
-      <div class="mpesa-info-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-        <div>
-          <strong>Pay by M-Pesa</strong>
-          <span>Paybill <strong>4122613</strong>, Account: <strong>St. Christophers Holdings-GYM</strong></span>
-        </div>
-      </div>
-    </div>
+    <ul class="pd-info sf-rv gy-info">
+      <li><span>Pay by M-Pesa</span><b>Paybill 4122613</b></li>
+      <li><span>Account</span><b>St. Christophers Holdings-GYM</b></li>
+      <li><span>Questions</span><b><a href="tel:+254720720444">0720 720 444</a></b></li>
+    </ul>
   </div>
 </section>
 
-<!-- OPENING HOURS -->
-<section class="sf-hours" id="hours">
-  <div class="sf-hours-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">Opening Hours</div>
-      <h2>When We're <span>Open</span></h2>
-    </div>
-    <div class="sf-hours-grid reveal">
-      <div class="sf-hours-card">
-        <h3>The Gym</h3>
-        <dl>
-          <div><dt>Monday to Friday</dt><dd>5am-8am and 4pm-8pm</dd></div>
-          <div><dt>Saturday</dt><dd>6am-6pm</dd></div>
-          <div><dt>Sunday</dt><dd>10am-2pm</dd></div>
-        </dl>
-      </div>
-      <div class="sf-hours-card">
-        <h3>Padel Courts</h3>
-        <dl>
-          <div><dt>Every day</dt><dd>6am-9pm</dd></div>
-          <div><dt>Entrance</dt><dd>Gate 3a</dd></div>
-        </dl>
-        <a href="book-padel.html" class="sf-text-link">Book a court &rarr;</a>
-      </div>
+<!-- OPENING HOURS: live week chart (signature motion) -->
+<section class="gy-hours" id="hours">
+  <div class="pd-wrap">
+    <p class="pd-kicker sf-rv">Opening hours</p>
+    <h2 class="pd-h2 sf-rv">When we're <span>open.</span></h2>
+    <p class="gy-now sf-rv" id="gyNow">Gym: Monday to Friday 5am-8am and 4pm-8pm, Saturday 6am-6pm, Sunday 10am-2pm. Padel courts: every day 6am-9pm.</p>
+    <div class="gy-week sf-rv" id="gyWeek" aria-label="Gym and padel opening hours for the week">
+      <div class="gy-axis" aria-hidden="true"><span>5am</span><span>9am</span><span>1pm</span><span>5pm</span><span>9pm</span></div>
+      <div class="gy-row" data-dow="1"><b>Mon</b><div class="gy-track"><i class="gy-gym" style="--s:0;--e:3"></i><i class="gy-gym" style="--s:11;--e:15"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="2"><b>Tue</b><div class="gy-track"><i class="gy-gym" style="--s:0;--e:3"></i><i class="gy-gym" style="--s:11;--e:15"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="3"><b>Wed</b><div class="gy-track"><i class="gy-gym" style="--s:0;--e:3"></i><i class="gy-gym" style="--s:11;--e:15"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="4"><b>Thu</b><div class="gy-track"><i class="gy-gym" style="--s:0;--e:3"></i><i class="gy-gym" style="--s:11;--e:15"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="5"><b>Fri</b><div class="gy-track"><i class="gy-gym" style="--s:0;--e:3"></i><i class="gy-gym" style="--s:11;--e:15"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="6"><b>Sat</b><div class="gy-track"><i class="gy-gym" style="--s:1;--e:13"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-row" data-dow="0"><b>Sun</b><div class="gy-track"><i class="gy-gym" style="--s:5;--e:9"></i><i class="gy-pad" style="--s:1;--e:16"></i></div></div>
+      <div class="gy-legend"><span><i class="gy-gym"></i>Gym</span><span><i class="gy-pad"></i>Padel courts</span><span class="gy-legend-now"><i></i>Now, Nairobi time</span></div>
     </div>
   </div>
 </section>
@@ -388,32 +337,32 @@
 <!-- FAQ -->
 <section class="sf-faq" id="faq">
   <div class="sf-faq-inner">
-    <div class="section-header reveal">
+    <div class="section-header sf-rv">
       <div class="section-tag">Questions</div>
       <h2>Gym <span>Questions</span></h2>
     </div>
-    <div class="sf-faq-list">
-      <div class="sf-faq-item reveal">
+    <div class="sf-faq-list pd-faq-grid">
+      <div class="sf-faq-item sf-rv">
         <h3>How much is gym membership at Semper Fit?</h3>
         <p>Ksh 11,000 for one school term, Ksh 30,000 for three terms (school holidays not included), or Ksh 1,500 for a day pass.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>What time is the gym open?</h3>
         <p>Monday to Friday 5am-8am and 4pm-8pm, Saturday 6am-6pm and Sunday 10am-2pm.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>How do I pay?</h3>
         <p>By M-Pesa to Paybill 4122613, account St. Christophers Holdings-GYM.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>Where is Semper Fit?</h3>
         <p>Inside St. Christopher's International School in Karen, Nairobi. The padel courts are reached through Gate 3a.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>Do you offer personal training?</h3>
         <p>Yes. Sessions are one to one with a Semper Fit trainer. Message us on WhatsApp on 0742 822 357 to arrange one.</p>
       </div>
-      <div class="sf-faq-item reveal">
+      <div class="sf-faq-item sf-rv">
         <h3>Is there padel too?</h3>
         <p>Yes. Semper Fit has three covered padel courts, open every day from 6am to 9pm, with 60 or 90 minute sessions. <a href="padel.html">See padel</a>.</p>
       </div>
@@ -422,18 +371,12 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-text reveal">
-      <h2>Ready to <span>Start?</span></h2>
-      <p>Message us to join, ask about a class, or book a first session with a trainer.</p>
-      <div class="cta-btns">
-        <a href="contact.html" class="btn-primary">Contact us</a>
-        <a href="padel.html" class="btn-ghost">See padel</a>
-      </div>
-    </div>
-    <div class="cta-image reveal-right">
-      <img src="images/classes/get-started.webp" alt="Training at Semper Fit" loading="lazy" width="1440" height="1440">
+<section class="pd-cta">
+  <div class="pd-wrap pd-cta-inner">
+    <h2 class="pd-display pd-cta-h sf-rv"><span>First session</span><span class="pd-accent">this week?</span></h2>
+    <div class="pd-ctas sf-rv">
+      <a href="contact.html" class="btn-primary">Contact us</a>
+      <a href="padel.html" class="pd-ghost pd-ghost-light">See padel</a>
     </div>
   </div>
 </section>
@@ -441,12 +384,12 @@
 <!-- MAP -->
 <section class="map-section">
   <div class="map-inner">
-    <div class="section-header reveal">
+    <div class="section-header sf-rv">
       <div class="section-tag">Find Us</div>
       <h2>We're at <span>SCIS, Karen</span></h2>
       <p>Inside St. Christopher's International School, Karen, Nairobi.</p>
     </div>
-    <div class="map-frame reveal">
+    <div class="map-frame sf-rv">
       <iframe
         src="https://maps.google.com/maps?q=St+Christopher's+International+School+Karen+Nairobi+Kenya&output=embed"
         allowfullscreen=""

@@ -71,6 +71,40 @@
     }); }, 3000);
   }
 
+  /* Gym hours chart: a "now" line at the current Nairobi time, today's row marked, and
+     the hero chip says whether the gym is open right now. All from the bars' own data,
+     so the chart and the chip can never disagree. Static text above stays true without JS. */
+  var week = document.getElementById('gyWeek');
+  if (week) {
+    var paint = function () {
+      var eat = new Date(Date.now() + 3 * 3600 * 1000);
+      var dow = eat.getUTCDay(), h = eat.getUTCHours() + eat.getUTCMinutes() / 60, x = h - 5;
+      var rows = week.querySelectorAll('.gy-row'), today = null;
+      rows.forEach(function (r) { var t = Number(r.dataset.dow) === dow; r.classList.toggle('is-today', t); if (t) today = r; });
+      var line = week.querySelector('.gy-nowline');
+      if (!line) { line = document.createElement('span'); line.className = 'gy-nowline'; week.appendChild(line); }
+      if (today && x >= 0 && x <= 16) {
+        var tr = today.querySelector('.gy-track').getBoundingClientRect(), wr = week.getBoundingClientRect();
+        line.style.display = ''; line.style.left = (tr.left - wr.left + tr.width * x / 16) + 'px';
+      } else line.style.display = 'none';
+      var label = function (v) { var hh = Math.floor(v + 5), m = Math.round((v + 5 - hh) * 60); var ap = hh < 12 ? 'am' : 'pm'; var h12 = hh % 12 || 12; return h12 + (m ? ':' + String(m).padStart(2, '0') : '') + ap; };
+      var open = null, next = null;
+      if (today) today.querySelectorAll('.gy-gym').forEach(function (b) {
+        var s = Number(b.style.getPropertyValue('--s')), e = Number(b.style.getPropertyValue('--e'));
+        if (x >= s && x < e) open = e; else if (x < s && next === null) next = s;
+      });
+      var chip = document.getElementById('gyChip');
+      if (chip) {
+        chip.classList.toggle('is-open', open !== null);
+        document.getElementById('gyChipT').textContent = open !== null ? 'Gym open now' : 'Gym closed now';
+        document.getElementById('gyChipS').textContent = open !== null ? 'Until ' + label(open) + ' today' : (next !== null ? 'Opens ' + label(next) + ' today' : 'Opens again tomorrow');
+      }
+    };
+    paint();
+    window.addEventListener('resize', paint);
+    setInterval(paint, 60000);
+  }
+
   /* Padel rally: the SVG ball rests on its last point; the rally plays only while the
      court is on screen and the tab is visible, never under reduced motion. */
   var court = document.getElementById('pdCourt'), rally = document.getElementById('pdRally');
